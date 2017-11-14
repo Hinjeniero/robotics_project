@@ -1,0 +1,14 @@
+/home/salabeta/robotics_project/supervisor/CMakeFiles/install.dir
+/home/salabeta/robotics_project/supervisor/CMakeFiles/list_install_components.dir
+/home/salabeta/robotics_project/supervisor/CMakeFiles/install/strip.dir
+/home/salabeta/robotics_project/supervisor/CMakeFiles/install/local.dir
+/home/salabeta/robotics_project/supervisor/CMakeFiles/rebuild_cache.dir
+/home/salabeta/robotics_project/supervisor/CMakeFiles/edit_cache.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/install.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/list_install_components.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/rebuild_cache.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/install/local.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/install/strip.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/edit_cache.dir
+/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor_automoc.dir
