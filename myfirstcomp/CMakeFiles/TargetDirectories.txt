@@ -1,0 +1,12 @@
+/home/salabeta/myfirstcomp/CMakeFiles/install/local.dir
+/home/salabeta/myfirstcomp/CMakeFiles/rebuild_cache.dir
+/home/salabeta/myfirstcomp/CMakeFiles/edit_cache.dir
+/home/salabeta/myfirstcomp/CMakeFiles/install.dir
+/home/salabeta/myfirstcomp/CMakeFiles/list_install_components.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/install.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/list_install_components.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/install/local.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/rebuild_cache.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/edit_cache.dir
+/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp_automoc.dir
