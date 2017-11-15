@@ -43,28 +43,12 @@ public:
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 
 	void newAprilTag(const tagsList &tags);
-	
 
 public slots:
 	void compute(); 	
 
 private:
-	struct tagBuffer
-	{
-	  tagsList buf;
-	  QMutex mutex;
-	  void put(tag &t)
-	  {
-	    QMutexLocker ml(&mutex);
-	    buf.insert(0, t);
-	  };
-	  void get()
-	  {
-	    QMutexLocker ml(&mutex);
-	    //buf.back(0, t);
-	  };
-	};
-  
+	
 };
 
 #endif

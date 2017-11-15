@@ -7,13 +7,14 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/salabeta/robotics_project/supervisor/src/AprilTags.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/AprilTags.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/CommonBehavior.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/DifferentialRobot.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/GotoPoint.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/GotoPoint.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/apriltagsI.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/apriltagsI.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/commonbehaviorI.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/genericmonitor.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericmonitor.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/genericworker.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericworker.cpp.o"
-  "/home/salabeta/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/salabeta/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/main.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/main.cpp.o"
+  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
+  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/specificmonitor.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificmonitor.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/specificworker.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificworker.cpp.o"
   "/home/salabeta/robotics_project/supervisor/src/supervisor_automoc.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/supervisor_automoc.cpp.o"
@@ -42,9 +43,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/salabeta/robocomp/classes"
-  "/home/salabeta/robocomp/libs"
-  "/home/salabeta/robocomp/interfaces"
+  "/opt/robocomp/classes"
+  "/opt/robocomp/libs"
+  "/opt/robocomp/interfaces"
   "/include"
   )
 
@@ -53,6 +54,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/salabeta/robotics_project/supervisor/src/AprilTags.h" "/home/salabeta/robotics_project/supervisor/src/AprilTags.cpp"
   "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.h" "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.cpp"
   "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.h" "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.cpp"
+  "/home/salabeta/robotics_project/supervisor/src/GotoPoint.h" "/home/salabeta/robotics_project/supervisor/src/GotoPoint.cpp"
   )
 
 

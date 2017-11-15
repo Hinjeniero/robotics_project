@@ -62,15 +62,8 @@ void SpecificWorker::compute()
 
 
 void SpecificWorker::newAprilTag(const tagsList &tags)
-
 {
-  for(auto t: tags)
-  {
-    std::cout << t.id << endl;
-    std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
-    std::cout << "*****************************************" << endl;
-  }
-  
+
 }
 
 
