@@ -34,11 +34,11 @@
 #define MAXROT 1 //Max rotation speed
 #define MINDISTANCE 50 //Distance to the target needed to arrive at it.
 #define threshold 300 //Minimal distance to an obstacle before action
-#define leftMaxAngle 10 //First valid position of the laser
-#define leftAngle 25 //25º position of the index
+#define maxLeftAngle 10 //First valid position of the laser
+#define leftAngle 30 //25º position of the index
 #define middleAngle 50
-#define rightAngle 75
-#define rightMaxAngle 90 //Last valid position of the laser
+#define rightAngle 70
+#define maxRightAngle 90 //Last valid position of the laser
 #define marginError 100 //Margin error of the vectorContainsPoint
 #define angleLimit 0.06//Angle which the robot has with the target. threshold
 
@@ -56,12 +56,8 @@ public:
 	void idleState();
 	/*GOTO State -> Going to a target*/
 	void gotoState(RoboCompLaser::TLaserData ldata); 
-	/*TURN State -> Turning until the encountered obstacle is no more at sight*/
-	void turnState (RoboCompLaser::TLaserData ldata);
-	/*Checks the laser and returns TRUE when the turn is enough to not bump into the obstacle*/
-	bool endTurnState(RoboCompLaser::TLaserData ldata);
 	/*AVOID State -> Follow the obstacle's border until it sees the target or pass over the vector of GOTO*/
-	void avoidState (RoboCompLaser::TLaserData ldata); 
+	void bugState (RoboCompLaser::TLaserData ldata); 
 	/*Returns TRUE if the target is within the robot's laser (ldata). FALSE otherwise*/
 	bool targetAtSight(RoboCompLaser::TLaserData ldata);
 	/*Returns TRUE if the robot's present position is near (Using a margin error) of the GOTO vector*/
@@ -71,11 +67,9 @@ public:
 	/*END State -> Last state between GOTO and IDLE. Does nothing atm*/
 	void endState ();
 	/*Returns TRUE if there is an obstacle in the laser data at a distance lower than a threshold*/
-	bool obstacle(RoboCompLaser::TLaserData ldata);
+	bool obstacle(RoboCompLaser::TLaserData ldata, int start, int end);
 	/*Decides the turn direction, thinking in which one it would have to turn the less*/
 	void decideTurnDirection(RoboCompLaser::TLaserData ldata);
-	/*Print parameters of the GOTO state->Sigmoid value, gaussian value, rot and adv...*/
-	void printState(float d, float adv, float rot);
 	/*Print the laser's array values between start and end positions*/
 	void printLaser(RoboCompLaser::TLaserData ldata, int start, int end);
 	/*Set a target according to the pick that the user did with the mouse*/
@@ -85,16 +79,13 @@ public:
 	/*Sigmoid function*/
 	float getSigmoid(float distance);
 	/*State machine enum*/
-	enum State {IDLE, GOTO, TURN, AVOID, END};
+	enum State {IDLE, GOTO, BUG, END};
 	/*Turn direction enum*/
 	enum Turn {NONE, LEFT, RIGHT};
 	/*Present state of the robot*/
 	State robotState = State::IDLE;
-	/*Last turn direction that the robot did*/
-	Turn turnDirection = Turn::NONE;
 	/*Where was the last wall (To wall follow, bug method)*/
 	Turn lastWall = Turn::NONE;
-	
 	/*Where was the last wall (To wall follow, bug method)*/
 	void go(const string &nodo, const float x, const float y, const float alpha);
 	void turn(const float speed);
