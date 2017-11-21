@@ -36,34 +36,38 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-
-
-
-	
 	timer.start(Period);
-	
-
 	return true;
 }
 
 void SpecificWorker::compute()
 {
-// 	try
-// 	{
-// 		camera_proxy->getYImage(0,img, cState, bState);
-// 		memcpy(image_gray.data, &img[0], m_width*m_height*sizeof(uchar));
-// 		searchTags(image_gray);
-// 	}
-// 	catch(const Ice::Exception &e)
-// 	{
-// 		std::cout << "Error reading from Camera" << e << std::endl;
-// 	}
+  try
+  {
+      RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
+      RoboCompDifferentialRobot::TBaseState state;
+      differentialrobot_proxy->getBaseState(state);
+      inner->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); //Updates the transform values according to the robot's actual location	    
+      //std::sort(ldata.begin(), ldata.end(), [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return a.dist < b.dist; }) ;  //sort laser data from small to large distances using a lambda function.
+      switch(robotState) {
+	case State::SEARCH: 
+	  searchState();
+	  break;
+	case State::WAIT:	  
+	  gotoState(ldata);
+	  break;
+      }
 }
 
+void SpecificWorker::searchState(){
+  differentialrobot_proxy->setSpeedBase(0, MAXROT);
+}
 
-void SpecificWorker::newAprilTag(const tagsList &tags)
+void SpecificWorker::waitState(){
+  differentialrobot_proxy->setSpeedBase(0, 0);
+}
 
-{
+void SpecificWorker::newAprilTag(const tagsList &tags){
   for(auto t: tags)
   {
     std::cout << t.id << endl;

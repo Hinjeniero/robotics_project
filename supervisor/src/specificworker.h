@@ -34,6 +34,8 @@
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
 
+#define MAXROT 1 //Max rotation speed
+
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
@@ -41,13 +43,18 @@ public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-
+	void searchState();
+	void waitState();
+	/*State machine enum*/
+	enum State {SEARCH, WAIT};
+  /*Present state of the robot*/
+	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);
 	
 
 public slots:
 	void compute(); 	
-
+    
 private:
 	struct tagBuffer
 	{
@@ -58,10 +65,12 @@ private:
 	    QMutexLocker ml(&mutex);
 	    buf.insert(0, t);
 	  };
-	  void get()
+	  tag get()
 	  {
 	    QMutexLocker ml(&mutex);
-	    //buf.back(0, t);
+	    tag t = buf.back();
+	    buf.pop_back();
+	    return t;
 	  };
 	};
   
