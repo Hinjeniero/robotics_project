@@ -44,11 +44,6 @@ void SpecificWorker::compute()
 {
   try
   {
-      RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
-      RoboCompDifferentialRobot::TBaseState state;
-      differentialrobot_proxy->getBaseState(state);
-      inner->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); //Updates the transform values according to the robot's actual location	    
-      //std::sort(ldata.begin(), ldata.end(), [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return a.dist < b.dist; }) ;  //sort laser data from small to large distances using a lambda function.
       switch(robotState) {
 	case State::SEARCH: 
 	  searchState();
@@ -60,16 +55,24 @@ void SpecificWorker::compute()
 }
 
 void SpecificWorker::searchState(){
+  
+ if (tag.id == current) {
+   robotState = State::WAIT;
+ }
+ 
   differentialrobot_proxy->setSpeedBase(0, MAXROT);
 }
 
 void SpecificWorker::waitState(){
-  differentialrobot_proxy->setSpeedBase(0, 0);
+  robotState = State::SEARCH;
+  //TODO connect to firstcomp and targetAt
+  current++;
 }
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
   for(auto t: tags)
   {
+    buffer.put(t);
     std::cout << t.id << endl;
     std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
     std::cout << "*****************************************" << endl;

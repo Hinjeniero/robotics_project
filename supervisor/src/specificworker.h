@@ -43,11 +43,11 @@ public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-	void searchState();
+	void searchState(RoboCompAprilTags::tagsLis tag);
 	void waitState();
 	/*State machine enum*/
 	enum State {SEARCH, WAIT};
-  /*Present state of the robot*/
+      /*Present state of the robot*/
 	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);
 	
@@ -56,11 +56,12 @@ public slots:
 	void compute(); 	
     
 private:
+	int current=0;
 	struct tagBuffer
 	{
 	  tagsList buf;
 	  QMutex mutex;
-	  void put(tag &t)
+	  void put(tag t)
 	  {
 	    QMutexLocker ml(&mutex);
 	    buf.insert(0, t);
@@ -72,7 +73,7 @@ private:
 	    buf.pop_back();
 	    return t;
 	  };
-	};
+	};tagBuffer buffer;
   
 };
 
