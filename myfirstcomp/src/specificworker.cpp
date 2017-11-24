@@ -50,6 +50,7 @@ void SpecificWorker::compute(){
       differentialrobot_proxy->getBaseState(state);
       inner->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); //Updates the transform values according to the robot's actual location	    
       //std::sort(ldata.begin(), ldata.end(), [](RoboCompLaser::TData a, RoboCompLaser::TData b){ return a.dist < b.dist; }) ;  //sort laser data from small to large distances using a lambda function.
+      //printLaser(ldata, maxLeftAngle, maxRightAngle);
       switch(robotState) {
 	case State::IDLE: 
 	  idleState();
@@ -80,7 +81,6 @@ void SpecificWorker::idleState(){
   }
 }
 void SpecificWorker::gotoState(RoboCompLaser::TLaserData ldata) {
-  std::cout << "GOTO STATE!" << endl;  
   if(obstacle(ldata, leftAngle, rightAngle)){ /*Obstacle detected, left and right side*/
    differentialrobot_proxy->setSpeedBase(0, 0); //TODO Take into account the braking
    robotState = State::BUG;
@@ -108,22 +108,17 @@ void SpecificWorker::gotoState(RoboCompLaser::TLaserData ldata) {
 }
 
 void SpecificWorker::bugState (RoboCompLaser::TLaserData ldata){
-  if (lastWall == Turn::RIGHT)
-    std::cout << "WALL AT RIGHT" << endl;
-  else
-    std::cout << "WALL AT LEFT" << endl;
-  std::cout << "BUG STATE!" << endl;  
   RoboCompDifferentialRobot::TBaseState state;
   differentialrobot_proxy->getBaseState(state);
   float rot = MAXROT/2 + MAXROT%2;
   float adv = MAXVEL/2 + MAXVEL%2; //* getGauss(rot, 0.3, 0.5);
-  
-  if((targetAtSight(ldata) && !obstacle(ldata, leftAngle, rightAngle)) || (angleWithTarget() && !obstacle(ldata, leftAngle, rightAngle))){
+  int margin = 5;
+  if((targetAtSight(ldata) && !obstacle(ldata, maxLeftAngle, maxRightAngle)) || (angleWithTarget() && !obstacle(ldata, maxLeftAngle, maxRightAngle))){
     robotState = State::GOTO;
     return;
   }
   
-  if(obstacle(ldata, leftAngle, rightAngle)){
+  if(obstacle(ldata, leftAngle+margin, rightAngle-margin)){
     if(lastWall == Turn::RIGHT){
       differentialrobot_proxy->setSpeedBase(0, -rot);
       return;
@@ -131,11 +126,11 @@ void SpecificWorker::bugState (RoboCompLaser::TLaserData ldata){
     differentialrobot_proxy->setSpeedBase(0, rot);
     return;
   }
-  if(lastWall == Turn::RIGHT && !obstacle(ldata, rightAngle, maxRightAngle)){
+  if(lastWall == Turn::RIGHT && !obstacle(ldata, maxLeftAngle, leftAngle)){
       differentialrobot_proxy->setSpeedBase(adv, rot);
       return;
   }
-  if (lastWall == Turn::LEFT && !obstacle(ldata, maxLeftAngle, leftAngle)){
+  if (lastWall == Turn::LEFT && !obstacle(ldata, rightAngle, maxRightAngle)){
     differentialrobot_proxy->setSpeedBase(adv, -rot);
     return;
   }
@@ -181,14 +176,17 @@ bool SpecificWorker::obstacle(RoboCompLaser::TLaserData ldata, int start, int en
 }
 
 /*Decides the better turn, checking where there is "more" obstacle, on the left or on the right (Preference = left)*/
-void SpecificWorker::decideTurnDirection(RoboCompLaser::TLaserData ldata)
-{
-  for(int i= middleAngle; i<0 || i>ldata.size(); i++){
-    if (ldata[middleAngle+i].dist < threshold){
+void SpecificWorker::decideTurnDirection(RoboCompLaser::TLaserData ldata){
+  int j=0;
+  for(int i = 0; i <= middleAngle-leftAngle; i++){
+    j++;
+    if (ldata[leftAngle+i].dist < threshold){
+      std::cout << ldata[leftAngle+i].dist << "is less than threshold" << endl;
       lastWall = Turn::RIGHT;
       return;
     }
-    if (ldata[middleAngle-i].dist < threshold){
+    if (ldata[rightAngle-i].dist < threshold){
+      std::cout << ldata[rightAngle-i].dist << "is less than threshold" << endl;
       lastWall = Turn::LEFT;
       return;
     }
@@ -196,7 +194,7 @@ void SpecificWorker::decideTurnDirection(RoboCompLaser::TLaserData ldata)
 }
 
 void SpecificWorker::printLaser(RoboCompLaser::TLaserData ldata, int start, int end){
-  for(int i=start; i<=end; i+=5)
+  for(int i=start; i<=end; i++)
     std::cout << "Laser position " << i << " distance -> " << ldata[i].dist << endl;
 }
 
