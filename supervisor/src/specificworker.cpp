@@ -49,24 +49,26 @@ void SpecificWorker::compute()
 	  searchState();
 	  break;
 	case State::WAIT:	  
-	  gotoState(ldata);
+	  waitState(ldata);
 	  break;
       }
 }
 
 void SpecificWorker::searchState(){
-  
- if (tag.id == current) {
+  tag t = buffer.get()
+ if (t.id == current) {
    robotState = State::WAIT;
  }
- 
-  differentialrobot_proxy->setSpeedBase(0, MAXROT);
+ myfirstcomp.turn(1);
 }
 
 void SpecificWorker::waitState(){
   robotState = State::SEARCH;
+  myfirstcomp.turn(1);
+  if (t.id == current){
+  robotState = State::WAIT;    
+  }
   //TODO connect to firstcomp and targetAt
-  current++;
 }
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
