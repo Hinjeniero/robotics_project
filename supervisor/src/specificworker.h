@@ -43,7 +43,7 @@ public:
 	SpecificWorker(MapPrx& mprx);	
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-	void searchState(RoboCompAprilTags::tagsLis tag);
+	void searchState();
 	void waitState();
 	/*State machine enum*/
 	enum State {SEARCH, WAIT};
@@ -57,14 +57,17 @@ public slots:
     
 private:
 	int current=0;
+	InnerModel *innermodel;	
+	
 	struct tagBuffer
 	{
 	  tagsList buf;
-	  QMutex mutex;
+	  QMutex mutex;  
+	  
 	  void put(tag t)
 	  {
 	    QMutexLocker ml(&mutex);
-	    buf.insert(0, t);
+	    buf.push_back(t);
 	  };
 	  tag get()
 	  {
@@ -73,7 +76,11 @@ private:
 	    buf.pop_back();
 	    return t;
 	  };
-	};tagBuffer buffer;
+	  bool empty()
+	  {
+	    return buf.empty();
+	  }
+	} buffer;
   
 };
 

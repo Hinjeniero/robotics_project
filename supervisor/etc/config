@@ -1,4 +1,5 @@
-CommonBehavior.Endpoints=tcp -p 11000
+
+CommonBehavior.Endpoints=tcp -p 11001
 
 
 # Endpoints for subscriptions

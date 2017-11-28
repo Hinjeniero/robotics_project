@@ -36,12 +36,16 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
+  	innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/simpleworld.xml");
 	timer.start(Period);
 	return true;
 }
 
 void SpecificWorker::compute()
 {
+  RoboCompDifferentialRobot::TBaseState state;
+  differentialrobot_proxy->getBaseState(state);
+  innermodel->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); 
   try
   {
       switch(robotState) {
@@ -49,26 +53,36 @@ void SpecificWorker::compute()
 	  searchState();
 	  break;
 	case State::WAIT:	  
-	  waitState(ldata);
+	  waitState();
 	  break;
       }
+  }catch(const exception e) {
+    
+  }
 }
 
 void SpecificWorker::searchState(){
-  tag t = buffer.get()
- if (t.id == current) {
-   robotState = State::WAIT;
- }
- myfirstcomp.turn(1);
+  
+  if(!buffer.empty()){
+    tag t = buffer.get();
+    if (t.id == current) {
+      robotState = State::WAIT;
+      gotopoint_proxy->go("", t.rx, t.rz, 0);
+    }
+  }
+  gotopoint_proxy->turn(1);
 }
 
 void SpecificWorker::waitState(){
-  robotState = State::SEARCH;
-  myfirstcomp.turn(1);
-  if (t.id == current){
-  robotState = State::WAIT;    
+  if (gotopoint_proxy->atTarget()){
+    current++;
+    robotState = State::SEARCH;
   }
-  //TODO connect to firstcomp and targetAt
+  if (current == 4){
+    current = 0;
+  }
+  gotopoint_proxy->stop();
+  
 }
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
