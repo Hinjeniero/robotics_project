@@ -14,11 +14,15 @@ qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal $(qdbus org.kde.yak
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "Joystick" 
-qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "cd robocomp/components/robocomp-robolab/components/joystickComp/bin"
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "./robocomp/components/robocomp-robolab/components/joystickComp/bin/startJoyStick.sh"
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "Myfirstcomp" 
 qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "robotics_project/myfirstcomp/bin/myfirstcomp robotics_project/myfirstcomp/etc/config"
+
+qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
+qdbus org.kde.yakuake /yakuake/tabs setTabTitle $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "AprilTags" 
+qdbus org.kde.yakuake /yakuake/sessions runCommandInTerminal $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "./robocomp/components/robocomp-robolab/components/apriltagsMASTER/bin/AprilTagsComp  ./robocomp/components/robocomp-robolab/components/apriltagsMASTER/etc/config"
 
 qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.addSession
 qdbus org.kde.yakuake /yakuake/tabs setTabTitle $(qdbus org.kde.yakuake /yakuake/sessions org.kde.yakuake.activeSessionId) "Supervisor" 
