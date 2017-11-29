@@ -64,22 +64,24 @@ private:
 	  tagsList buf;
 	  QMutex mutex;  
 	  
-	  void put(tag t)
+	  void putAtEnd(tag t)
 	  {
 	    QMutexLocker ml(&mutex);
 	    buf.push_back(t);
 	  };
-	  tag get()
+	  tag getFirst()
 	  {
 	    QMutexLocker ml(&mutex);
-	    tag t = buf.back();
-	    buf.pop_back();
-	    return t;
+	    return buf.front();
+	  };
+	  void deleteFirst(){
+	    QMutexLocker ml(&mutex);
+	    buf.erase(buf.begin());
 	  };
 	  bool empty()
 	  {
 	    return buf.empty();
-	  }
+	  };
 	} buffer;
   
 };
