@@ -56,34 +56,45 @@ public slots:
 	void compute(); 	
     
 private:
-	int current=0;
+	int current;
 	InnerModel *innermodel;	
 	
 	struct tagBuffer
-	{
+	{	  
 	  tagsList buf;
 	  QMutex mutex;  
 	  
 	  void putAtEnd(tag t)
-	  {
+ 	  {
+	    if(!empty()) {
+	      if(buf.back().id != t.id) {
+		if(buf.front().id == t.id) {
+		  current = t.id;
+		} else {
+		  QMutexLocker ml(&mutex);
+		  buf.push_back(t);		  
+		}
+	      }
+	      return;
+	    }
 	    QMutexLocker ml(&mutex);
 	    buf.push_back(t);
 	  };
+  
 	  tag getFirst()
 	  {
 	    QMutexLocker ml(&mutex);
 	    return buf.front();
 	  };
-	  void deleteFirst(){
-	    QMutexLocker ml(&mutex);
-	    buf.erase(buf.begin());
-	  };
+	  
 	  bool empty()
 	  {
 	    return buf.empty();
 	  };
 	} buffer;
-  
+
+
+	
 };
 
 #endif

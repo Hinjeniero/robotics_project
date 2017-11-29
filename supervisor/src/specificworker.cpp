@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-  	innermodel = new InnerModel("/home/hinjeniero/robocomp/files/innermodel/simpleworld.xml");
+  	innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/simpleworld.xml");
 	timer.start(Period);
 	return true;
 }
@@ -62,12 +62,13 @@ void SpecificWorker::compute()
 }
 
 void SpecificWorker::searchState(){
-  
   if(!buffer.empty()){
     if (buffer.getFirst().id == current) {
       tag t = buffer.getFirst();
       robotState = State::WAIT;
-      gotopoint_proxy->go("", t.rx, t.rz, 0);
+      std::cout << "id = current" << endl;
+      std::cout << "coordinates: " <<t.tx<< " " << t.tz<< endl;
+      gotopoint_proxy->go("", t.tx, t.tz, 0);
       return;
     }
   }
@@ -76,13 +77,11 @@ void SpecificWorker::searchState(){
 
 void SpecificWorker::waitState(){
   if (gotopoint_proxy->atTarget()){
+    std::cout << "At target already" << endl;
     current++;
     robotState = State::SEARCH;
     gotopoint_proxy->stop();
-    buffer.deleteFirst();
   }
-  if (buffer.getFirst().id < current)
-    current = 0;
 }
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
@@ -93,7 +92,6 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
     std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
     std::cout << "*****************************************" << endl;
   }
-  
 }
 
 
