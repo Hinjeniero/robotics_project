@@ -23,11 +23,6 @@
 */
 
 
-
-
-
-
-
 #ifndef SPECIFICWORKER_H
 #define SPECIFICWORKER_H
 
@@ -45,55 +40,22 @@ public:
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
 	void searchState();
 	void waitState();
+	void idleState();
 	/*State machine enum*/
-	enum State {SEARCH, WAIT};
+	enum State {SEARCH, WAIT, IDLE};
       /*Present state of the robot*/
 	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);
-	
 
 public slots:
 	void compute(); 	
     
 private:
-	int current;
+	int current = 0;
 	InnerModel *innermodel;	
-	
-	struct tagBuffer
-	{	  
-	  tagsList buf;
-	  QMutex mutex;  
-	  
-	  void putAtEnd(tag t)
- 	  {
-	    if(!empty()) {
-	      if(buf.back().id != t.id) {
-		if(buf.front().id == t.id) {
-		  current = t.id;
-		} else {
-		  QMutexLocker ml(&mutex);
-		  buf.push_back(t);		  
-		}
-	      }
-	      return;
-	    }
-	    QMutexLocker ml(&mutex);
-	    buf.push_back(t);
-	  };
-  
-	  tag getFirst()
-	  {
-	    QMutexLocker ml(&mutex);
-	    return buf.front();
-	  };
-	  
-	  bool empty()
-	  {
-	    return buf.empty();
-	  };
-	} buffer;
-
-
+	tag currentTag;
+	QVec target;
+	bool targetActive = false;
 	
 };
 

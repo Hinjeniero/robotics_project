@@ -36,9 +36,9 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-  	innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/simpleworld.xml");
-	timer.start(Period);
-	return true;
+    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/simpleworld.xml");
+    timer.start(Period);
+    return true;
 }
 
 void SpecificWorker::compute()
@@ -55,6 +55,9 @@ void SpecificWorker::compute()
 	case State::WAIT:	  
 	  waitState();
 	  break;
+	case State::IDLE:	  
+	  idleState();
+	  break;
       }
   }catch(const exception e) {
     
@@ -62,32 +65,41 @@ void SpecificWorker::compute()
 }
 
 void SpecificWorker::searchState(){
-  if(!buffer.empty()){
-    if (buffer.getFirst().id == current) {
-      tag t = buffer.getFirst();
+    gotopoint_proxy->turn(1);
+    if(targetActive){  
       robotState = State::WAIT;
-      std::cout << "id = current" << endl;
-      std::cout << "coordinates: " <<t.tx<< " " << t.tz<< endl;
-      gotopoint_proxy->go("", t.tx, t.tz, 0);
-      return;
+      target = innermodel->transform("world", QVec::vec3(currentTag.tx, currentTag.ty, currentTag.tz), "base"); //Vector's source is robot's location, vector's end is the mouse pick
+      gotopoint_proxy->go("", target.x(), target.z(), 0);
+      std::cout << "transformed  - "<<target.x() << " <-> tag id -" << target.z() <<endl;
     }
-  }
-  gotopoint_proxy->turn(1);
 }
 
 void SpecificWorker::waitState(){
   if (gotopoint_proxy->atTarget()){
-    std::cout << "At target already" << endl;
+    std::cout << "arrived at target wait" << endl;
+    gotopoint_proxy->go("", 0, 0, 0);
+    robotState = State::IDLE;
+  }
+}
+
+void SpecificWorker::idleState(){
+  if (gotopoint_proxy->atTarget()){
+    std::cout << "arrived at target idle" << endl;
     current++;
-    robotState = State::SEARCH;
     gotopoint_proxy->stop();
+    targetActive = false;
+    robotState = State::SEARCH;
   }
 }
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
   for(auto t: tags)
   {
-    buffer.putAtEnd(t);
+    if (robotState == State::SEARCH && t.id == current){
+      std::cout << "Current - "<<current << " <-> tag id -" << t.id <<endl;
+      currentTag = t;
+      targetActive = true;
+    }
     std::cout << t.id << endl;
     std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
     std::cout << "*****************************************" << endl;

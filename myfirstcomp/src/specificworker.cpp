@@ -1,5 +1,4 @@
-/*
- *    Copyright (C) 2017 by YOUR NAME HERE
+/* *    Copyright (C) 2017 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -233,11 +232,14 @@ bool SpecificWorker::atTarget(){
   QVec tR = inner->transform("base", QVec::vec3(t.first, 0, t.second), "world"); //Vector's source is robot's location, vector's end is the mouse pick
   float d = tR.norm2(); //Gets the distance, that equals the vector's module
   //If no exit conditions
-  if(d < MINDISTANCE)
+  if(d < MINDISTANCE){
+    std::cout << "Arrived at target." << endl;
     return true;
+  }
   return false;
 }
  
 void SpecificWorker::stop(){
-  differentialrobot_proxy->setSpeedBase(0, 0);  
+  differentialrobot_proxy->setSpeedBase(0, 0);
+  robotState = State::END;
 }
