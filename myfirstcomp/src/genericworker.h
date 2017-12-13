@@ -27,12 +27,12 @@
 #include <ui_mainUI.h>
 
 #include <CommonBehavior.h>
-#include <GotoPoint.h>
 #include <Laser.h>
-#include <RCISMousePicker.h>
+#include <GetAprilTags.h>
+#include <GotoPoint.h>
+#include <JointMotor.h>
 #include <DifferentialRobot.h>
-
-
+#include <RCISMousePicker.h>
 
 #define CHECK_PERIOD 5000
 #define BASIC_PERIOD 100
@@ -41,10 +41,12 @@ typedef map <string,::IceProxy::Ice::Object*> MapPrx;
 
 using namespace std;
 
-using namespace RoboCompGotoPoint;
 using namespace RoboCompLaser;
-using namespace RoboCompRCISMousePicker;
+using namespace RoboCompGetAprilTags;
+using namespace RoboCompGotoPoint;
+using namespace RoboCompJointMotor;
 using namespace RoboCompDifferentialRobot;
+using namespace RoboCompRCISMousePicker;
 
 
 
@@ -67,13 +69,17 @@ public:
 	QMutex *mutex;
 	
 
-	DifferentialRobotPrx differentialrobot_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
+	JointMotorPrx jointmotor_proxy;
 	LaserPrx laser_proxy;
+	DifferentialRobotPrx differentialrobot_proxy;
 
-	virtual void go(const string &nodo, const float x, const float y, const float alpha) = 0;
-	virtual void turn(const float speed) = 0;
-	virtual bool atTarget() = 0;
+	virtual void pickingBox() = 0;
 	virtual void stop() = 0;
+	virtual bool atTarget() = 0;
+	virtual void turn(const float speed) = 0;
+	virtual void go(const string &nodo, const float x, const float y, const float alpha) = 0;
+	virtual void releasingBox() = 0;
 	virtual void setPick(const Pick &myPick) = 0;
 
 
@@ -83,6 +89,7 @@ protected:
 
 public slots:
 	virtual void compute() = 0;
+
 signals:
 	void kill();
 };
