@@ -68,7 +68,6 @@ void SpecificWorker::searchState(){
     gotopoint_proxy->turn(1);
     if(targetActive){  
       robotState = State::WAIT;
-      target = innermodel->transform("world", QVec::vec3(currentTag.tx, currentTag.ty, currentTag.tz), "base"); //Vector's source is robot's location, vector's end is the mouse pick
       gotopoint_proxy->go("", target.x(), target.z(), 0);
       std::cout << "transformed  - "<<target.x() << " <-> tag id -" << target.z() <<endl;
     }
@@ -86,6 +85,8 @@ void SpecificWorker::idleState(){
   if (gotopoint_proxy->atTarget()){
     std::cout << "arrived at target idle" << endl;
     current++;
+    if (current > 3)
+      current = 0; //TODO delete this later
     gotopoint_proxy->stop();
     targetActive = false;
     robotState = State::SEARCH;
@@ -97,6 +98,7 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
   {
     if (robotState == State::SEARCH && t.id == current){
       std::cout << "Current - "<<current << " <-> tag id -" << t.id <<endl;
+      target = innermodel->transform("world", QVec::vec3(t.tx, t.ty, t.tz), "rgbd");
       currentTag = t;
       targetActive = true;
     }

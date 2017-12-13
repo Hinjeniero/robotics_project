@@ -102,7 +102,7 @@ void SpecificWorker::gotoState(RoboCompLaser::TLaserData ldata) {
   float adv;
   float rot = atan2(tR.x(), tR.z());
   if (rot > MAXROT) rot = MAXROT;
-  adv = MAXVEL * getSigmoid(d) * getGauss(rot, 0.3, 0.5);
+  adv = MAXVEL * getSigmoid(d) * getGauss(rot, 0.3, 0.5); 
   differentialrobot_proxy->setSpeedBase(adv, rot);
 }
 

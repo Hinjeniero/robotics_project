@@ -33,8 +33,8 @@
 
 #define MAXVEL 400 //Max advancing speed
 #define MAXROT 1 //Max rotation speed
-#define MINDISTANCE 250 //Distance to the target needed to arrive at it.
-#define threshold 50 //Minimal distance to an obstacle before action
+#define MINDISTANCE 450 //Distance to the target needed to arrive at it.
+#define threshold 100 //Minimal distance to an obstacle before action
 #define maxLeftAngle 10 //First valid position of the laser
 #define leftAngle 30 //25º position of the index
 #define middleAngle 50
