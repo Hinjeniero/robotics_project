@@ -92,6 +92,8 @@ public:
 	void turn(const float speed);
 	bool atTarget();
 	void stop();
+	void pickingBox();
+	void releasingBox();
 	
 
 public slots:
