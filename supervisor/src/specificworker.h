@@ -41,8 +41,9 @@ public:
 	void searchState();
 	void waitState();
 	void idleState();
+	void handlerState();
 	/*State machine enum*/
-	enum State {SEARCH, WAIT, IDLE};
+	enum State {SEARCH, WAIT, IDLE, HANDLER};
       /*Present state of the robot*/
 	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);

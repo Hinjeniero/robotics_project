@@ -80,7 +80,7 @@ public:
 	/*Sigmoid function*/
 	float getSigmoid(float distance);
 	/*State machine enum*/
-	enum State {IDLE, GOTO, BUG, END};
+	enum State {IDLE, GOTO, BUG, PICK, RELEASE, END};
 	/*Turn direction enum*/
 	enum Turn {NONE, LEFT, RIGHT};
 	/*Present state of the robot*/

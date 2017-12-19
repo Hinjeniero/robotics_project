@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/simpleworld.xml");
+    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -52,11 +52,14 @@ void SpecificWorker::compute()
 	case State::SEARCH: 
 	  searchState();
 	  break;
-	case State::WAIT:	  
+	case State::WAIT:  
 	  waitState();
 	  break;
 	case State::IDLE:	  
 	  idleState();
+	  break;
+	case State::HANDLER:	  
+	  handlerState();
 	  break;
       }
   }catch(const exception e) {
@@ -109,7 +112,9 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
 }
 
 
-
+void SpecificWorker::handlerState() {
+  
+}
 
 
 

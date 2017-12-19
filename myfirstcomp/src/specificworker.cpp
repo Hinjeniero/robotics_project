@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-  inner = new InnerModel("/home/robocomp/robocomp/files/innermodel/simpleworld.xml");
+  inner = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm.xml");
   timer.start(Period);
   return true;
 }
@@ -60,6 +60,12 @@ void SpecificWorker::compute(){
 	case State::BUG: 
 	  bugState(ldata);
 	  break;
+	case State::PICK: 
+	  pickingBox();
+	  break;
+	case State::RELEASE: 
+	  releasingBox();
+	  break;	  
 	case State::END: 
 	  endState();
 	  break;
@@ -242,4 +248,12 @@ bool SpecificWorker::atTarget(){
 void SpecificWorker::stop(){
   differentialrobot_proxy->setSpeedBase(0, 0);
   robotState = State::END;
+}
+
+void SpecificWorker::pickingBox() {
+  std::cout << "pickingBox()" << endl; 
+}
+
+void SpecificWorker::releasingBox() {
+  std::cout << "releasingBox()" << endl; 
 }
