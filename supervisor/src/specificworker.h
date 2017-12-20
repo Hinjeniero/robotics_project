@@ -47,12 +47,12 @@ public:
       /*Present state of the robot*/
 	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);
-
+	tag nearestAprilTag(const tagsList &tags);
 public slots:
 	void compute(); 	
     
 private:
-	int current = 0;
+	int current = 10;
 	InnerModel *innermodel;	
 	tag currentTag;
 	QVec target;

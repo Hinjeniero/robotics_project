@@ -88,14 +88,15 @@ void SpecificWorker::idleState(){
   if (gotopoint_proxy->atTarget()){
     std::cout << "arrived at target idle" << endl;
     current++;
-    if (current > 3)
-      current = 0; //TODO delete this later
+    if (current > 13)
+      current = 10; //TODO delete this later :) 
     gotopoint_proxy->stop();
     targetActive = false;
     robotState = State::SEARCH;
   }
 }
 
+/*
 void SpecificWorker::newAprilTag(const tagsList &tags){
   for(auto t: tags)
   {
@@ -109,8 +110,37 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
     std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
     std::cout << "*****************************************" << endl;
   }
+}*/
+
+
+void SpecificWorker::newAprilTag(const tagsList &tags){
+  tag t = nearestAprilTag(tags);
+  if (robotState == State::SEARCH){
+    std::cout << "Current - "<<current << " <-> tag id -" << t.id <<endl;
+    target = innermodel->transform("world", QVec::vec3(t.tx, t.ty, t.tz), "rgbd");
+    currentTag = t;
+    targetActive = true;
+  }
+  std::cout << t.id << endl;
+  std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
+  std::cout << "*****************************************" << endl;
 }
 
+tag SpecificWorker::nearestAprilTag(const tagsList &tags){
+  //sin periferia, la mas cercana de las que vea
+  //-----------------------------
+  float dist = sqrt(pow(tags[0].tx, 2)+pow(tags[0].tz, 2));
+  tag tmin = tags[0];
+  for (auto t: tags)
+  {
+    float aux = sqrt(pow(t.tx, 2)+pow(t.tz, 2));
+    if(aux < dist){
+      dist = aux;
+      tmin = t;
+    }
+  }
+ return tmin;
+}
 
 void SpecificWorker::handlerState() {
   
