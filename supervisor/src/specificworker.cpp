@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/ronniejd/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -49,16 +49,16 @@ void SpecificWorker::compute()
   try
   {
       switch(robotState) {
-	case State::SEARCH: 
+	case State::SEARCH:
 	  searchState();
 	  break;
-	case State::WAIT:  
+	case State::WAIT:
 	  waitState();
 	  break;
-	case State::IDLE:	  
+	case State::IDLE:
 	  idleState();
 	  break;
-	case State::HANDLER:	  
+	case State::HANDLER:
 	  handlerState();
 	  break;
       }
@@ -69,30 +69,37 @@ void SpecificWorker::compute()
 
 void SpecificWorker::searchState(){
     gotopoint_proxy->turn(1);
+    std::cout << "SEARCH - Buscando la id " << current <<endl;
     if(targetActive){  
       robotState = State::WAIT;
-      gotopoint_proxy->go("", target.x(), target.z(), 0);
-      std::cout << "transformed  - "<<target.x() << " <-> tag id -" << target.z() <<endl;
+      std::cout << "SEARCH - De camino a X = "<< target.x() << " Z = " << target.z() <<endl;
+      //target = innermodel->transform("world", QVec::vec3(target.tx, 0, target.tz), "base");
+      gotopoint_proxy->go("", target.x(), target.z(), 0);      
     }
 }
 
 void SpecificWorker::waitState(){
+  std::cout << "WAIT" << endl;
   if (gotopoint_proxy->atTarget()){
     std::cout << "arrived at target wait" << endl;
-    gotopoint_proxy->go("", 0, 0, 0);
-    robotState = State::IDLE;
+    std::cout << "Camino a la esquina entre 0 y 1" <<endl;
+    //TODO Aquí ha llegado a la caja
+    //gotopoint_proxy->go("", 1700, 1900, 0);
+    
+    //robotState = State::IDLE;
   }
 }
 
 void SpecificWorker::idleState(){
+  std::cout << "IDLE" << endl;
   if (gotopoint_proxy->atTarget()){
-    std::cout << "arrived at target idle" << endl;
-    current++;
-    if (current > 13)
-      current = 10; //TODO delete this later :) 
+    std::cout << "atTarget()" << endl;
+    //current++;
+    //if (current > 13)
+    //  current = 10; //TODO delete this later :) 
     gotopoint_proxy->stop();
     targetActive = false;
-    robotState = State::SEARCH;
+    //robotState = State::SEARCH;
   }
 }
 
@@ -114,16 +121,33 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
 
 
 void SpecificWorker::newAprilTag(const tagsList &tags){
-  tag t = nearestAprilTag(tags);
-  if (robotState == State::SEARCH){
-    std::cout << "Current - "<<current << " <-> tag id -" << t.id <<endl;
-    target = innermodel->transform("world", QVec::vec3(t.tx, t.ty, t.tz), "rgbd");
-    currentTag = t;
+  std::cout << "newAprilTag()" << endl;
+  std::cout << "currentTag.id = " << currentTag.id << endl;
+  
+  if (currentTag.id != 10) {
+    currentTag = testAprilTag(tags);
+  }  
+  
+  if (robotState == State::SEARCH && currentTag.id == 10) {
+    std::cout << "Encontrada! Current - "<< current << " -> tag id ->" << currentTag.id <<endl;
+    std::cout << "Antes de transformalar las coordenadas X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
+    target = innermodel->transform("world", QVec::vec3(currentTag.tx, 0, currentTag.tz), "rgbd");
     targetActive = true;
   }
-  std::cout << t.id << endl;
-  std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
+  std::cout << currentTag.id << endl;
+  std::cout << "X = "<< target.x() << " Z = " << target.z() << endl;
   std::cout << "*****************************************" << endl;
+}
+
+tag SpecificWorker::testAprilTag(const tagsList &tags){
+  //choose only the box with the id 10 on it
+  for (auto t: tags) {
+    if(t.id == 10){
+      currentTag = t;
+      std::cout << "testAprilTag() devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
+    }
+  }
+ return currentTag;
 }
 
 tag SpecificWorker::nearestAprilTag(const tagsList &tags){
@@ -143,7 +167,8 @@ tag SpecificWorker::nearestAprilTag(const tagsList &tags){
 }
 
 void SpecificWorker::handlerState() {
-  
+  cout << "REALIZANDO TRABAJO MANUAL "<< endl;
+  robotState = State::IDLE;
 }
 
 

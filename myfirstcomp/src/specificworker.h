@@ -97,7 +97,7 @@ public:
 	
 
 public slots:
-	void compute(); 	
+	void compute();
 
 private:
 	InnerModel *inner;

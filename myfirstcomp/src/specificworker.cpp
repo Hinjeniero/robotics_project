@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-  inner = new InnerModel("/home/robocomp/robocomp/files/innermodel/betaWorldArm.xml");
+  inner = new InnerModel("/home/ronniejd/robocomp/files/innermodel/betaWorldArm.xml");
   timer.start(Period);
   return true;
 }
@@ -95,13 +95,15 @@ void SpecificWorker::gotoState(RoboCompLaser::TLaserData ldata) {
 
   //All variables are needed to calculate distance
   std::pair<float, float> t = target.getTarget();
+  std::cout << "Desde gotoState() las coordenadas antes de transformarlas son X= "<<t.first << " Y = " << t.second << endl;
   QVec tR = inner->transform("base", QVec::vec3(t.first, 0, t.second), "world"); //Vector's source is robot's location, vector's end is the mouse pick
+  std::cout << "Desde gotoState() las coordenadas despues de transformarlas son X= "<<tR.x() << " Y = " << tR.z() << endl;
   float d = tR.norm2(); //Gets the distance, that equals the vector's module
   //If no exit conditions
   if(d < MINDISTANCE){
     robotState = State::END;
     target.setEmpty();
-    std::cout << "Arrived at target." <<endl;
+    std::cout << "Arrived at target del gotoState de myfirstcomp" <<endl;
     return;
   }
   /*We do continue on the GOTO state*/
@@ -154,7 +156,9 @@ bool SpecificWorker::targetAtSight(RoboCompLaser::TLaserData ldata)
    polygon << QPointF(r.x(), r.z());
    QPointF p(target.getTarget().first, target.getTarget().second); 
    if(polygon.containsPoint( p , Qt::WindingFill))
-     std::cout << "target is at sight, going" << endl;
+      std::cout << "MYFIRSTCOMP - targetAtSight()" << endl;
+      std::cout << "x = "<< target.getTarget().first << " y = "<< target.getTarget().second << endl;
+      std::cout << "target is at sight, going" << endl;
    return  polygon.containsPoint( p , Qt::WindingFill );  
 }
 
@@ -167,6 +171,7 @@ bool SpecificWorker::angleWithTarget () {
 }
 
 void SpecificWorker::endState(){
+  std::cout << "MYFIRSTCOMP - endState()" << endl;
   std::cout << "END STATE!" << endl;
   differentialrobot_proxy->setSpeedBase(0, 0);
   robotState = State::IDLE;
@@ -218,15 +223,28 @@ void SpecificWorker::setPick(const RoboCompRCISMousePicker::Pick& pick)
 {
   target.setTarget(pick.x, pick.z);
   robotState = State::IDLE;
+  std::cout << "MYFIRSTCOMP - setPick()" << endl;
   std::cout << "Location x -> " << pick.x << " was chosen." << endl;
   std::cout << "Location z -> " << pick.z << " was chosen." << endl; 
 }
 
 void SpecificWorker::go(const string &nodo, const float x, const float y, const float alpha){
-  target.setTarget(x, y);
-  robotState = State::IDLE;
-  std::cout << "Location x -> " << x << " was chosen." << endl;
-  std::cout << "Location z -> " << y << " was chosen." << endl; 
+  if(nodo == "") {
+    target.setTarget(x, y);
+    robotState = State::IDLE;
+    std::cout << "MYFIRSTCOMP - go()" << endl;
+    std::cout << "Location x -> " << x << " was chosen." << endl;
+    std::cout << "Location z -> " << y << " was chosen." << endl;     
+  } else {
+    
+    target.setTarget(x, y);
+    robotState = State::IDLE;
+    std::cout << "MYFIRSTCOMP - go()" << endl;    
+    std::cout << "MYFIRSTCOMP - De camino a "<< nodo << endl;
+    std::cout << "Location x -> " << x << " was chosen." << endl;
+    std::cout << "Location z -> " << y << " was chosen." << endl;      
+  }
+
 }
 
 void SpecificWorker::turn(const float speed){
@@ -239,6 +257,7 @@ bool SpecificWorker::atTarget(){
   float d = tR.norm2(); //Gets the distance, that equals the vector's module
   //If no exit conditions
   if(d < MINDISTANCE){
+    std::cout << "MYFIRSTCOMP - atTarget()" << endl;
     std::cout << "Arrived at target." << endl;
     return true;
   }
@@ -246,6 +265,7 @@ bool SpecificWorker::atTarget(){
 }
  
 void SpecificWorker::stop(){
+  std::cout << "MYFIRSTCOMP - stop()" << endl;
   differentialrobot_proxy->setSpeedBase(0, 0);
   robotState = State::END;
 }

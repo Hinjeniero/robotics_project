@@ -4,22 +4,24 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/salabeta/myfirstcomp/src/CommonBehavior.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o"
-  "/home/salabeta/myfirstcomp/src/DifferentialRobot.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o"
-  "/home/salabeta/myfirstcomp/src/GotoPoint.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o"
-  "/home/salabeta/myfirstcomp/src/Laser.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o"
-  "/home/salabeta/myfirstcomp/src/RCISMousePicker.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o"
-  "/home/salabeta/myfirstcomp/src/commonbehaviorI.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o"
-  "/home/salabeta/myfirstcomp/src/genericmonitor.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o"
-  "/home/salabeta/myfirstcomp/src/genericworker.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o"
-  "/home/salabeta/myfirstcomp/src/gotopointI.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o"
-  "/home/salabeta/myfirstcomp/src/main.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/main.cpp.o"
-  "/home/salabeta/myfirstcomp/src/myfirstcomp_automoc.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o"
-  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
-  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/salabeta/myfirstcomp/src/rcismousepickerI.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o"
-  "/home/salabeta/myfirstcomp/src/specificmonitor.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o"
-  "/home/salabeta/myfirstcomp/src/specificworker.cpp" "/home/salabeta/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CommonBehavior.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/DifferentialRobot.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GetAprilTags.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GotoPoint.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/JointMotor.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/Laser.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/RCISMousePicker.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/commonbehaviorI.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/genericmonitor.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/genericworker.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/gotopointI.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o"
+  "/home/ronniejd/robocomp/classes/qlog/qlog.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/home/ronniejd/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/ronniejd/robocomp/classes/rapplication/rapplication.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/home/ronniejd/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/main.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/main.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/rcismousepickerI.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/specificmonitor.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/specificworker.cpp" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -45,19 +47,21 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/opt/robocomp/classes"
-  "/opt/robocomp/libs"
-  "/opt/robocomp/interfaces"
+  "/home/ronniejd/robocomp/classes"
+  "/home/ronniejd/robocomp/libs"
+  "/home/ronniejd/robocomp/interfaces"
   "/include"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/salabeta/myfirstcomp/src/CommonBehavior.h" "/home/salabeta/myfirstcomp/src/CommonBehavior.cpp"
-  "/home/salabeta/myfirstcomp/src/DifferentialRobot.h" "/home/salabeta/myfirstcomp/src/DifferentialRobot.cpp"
-  "/home/salabeta/myfirstcomp/src/GotoPoint.h" "/home/salabeta/myfirstcomp/src/GotoPoint.cpp"
-  "/home/salabeta/myfirstcomp/src/Laser.h" "/home/salabeta/myfirstcomp/src/Laser.cpp"
-  "/home/salabeta/myfirstcomp/src/RCISMousePicker.h" "/home/salabeta/myfirstcomp/src/RCISMousePicker.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CommonBehavior.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/CommonBehavior.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/DifferentialRobot.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/DifferentialRobot.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GetAprilTags.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GetAprilTags.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GotoPoint.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/GotoPoint.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/JointMotor.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/JointMotor.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/Laser.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/Laser.cpp"
+  "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/RCISMousePicker.h" "/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/src/RCISMousePicker.cpp"
   )
 
 

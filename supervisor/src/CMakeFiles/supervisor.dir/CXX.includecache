@@ -6,7 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/salabeta/robotics_project/supervisor/src/AprilTags.cpp
+/home/ronniejd/robocomp/classes/qlog/qlog.cpp
+qlog.h
+/home/ronniejd/robocomp/classes/qlog/qlog.h
+
+/home/ronniejd/robocomp/classes/qlog/qlog.h
+config.h
+/home/ronniejd/robocomp/classes/qlog/config.h
+QtCore
+-
+iostream
+-
+Logger.h
+-
+
+/home/ronniejd/robocomp/classes/rapplication/rapplication.cpp
+rapplication.h
+/home/ronniejd/robocomp/classes/rapplication/rapplication.h
+
+/home/ronniejd/robocomp/classes/rapplication/rapplication.h
+Ice/Ice.h
+-
+Ice/Application.h
+-
+IceUtil/IceUtil.h
+-
+QtCore
+-
+
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/AprilTags.cpp
 AprilTags.h
 -
 Ice/LocalException.h
@@ -20,7 +48,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/CommonBehavior.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 Ice/LocalException.h
@@ -34,7 +62,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 Ice/LocalException.h
@@ -48,7 +76,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/GotoPoint.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/GotoPoint.cpp
 GotoPoint.h
 -
 Ice/LocalException.h
@@ -62,11 +90,11 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/apriltagsI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.cpp
 apriltagsI.h
-/home/salabeta/robotics_project/supervisor/src/apriltagsI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
 
-/home/salabeta/robotics_project/supervisor/src/apriltagsI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -76,13 +104,13 @@ AprilTags.h
 config.h
 -
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 
-/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
 
-/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -92,37 +120,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 genericmonitor.h
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/config.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
 
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.cpp
 genericmonitor.h
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 config.h
-/home/salabeta/robotics_project/supervisor/src/config.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/genericworker.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.cpp
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 config.h
-/home/salabeta/robotics_project/supervisor/src/config.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
 QtGui
 -
 stdint.h
@@ -140,7 +168,7 @@ DifferentialRobot.h
 AprilTags.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/main.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/main.cpp
 signal.h
 -
 QtCore
@@ -158,17 +186,17 @@ rapplication/rapplication.h
 qlog/qlog.h
 -
 config.h
-/home/salabeta/robotics_project/supervisor/src/config.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
 genericmonitor.h
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 specificworker.h
-/home/salabeta/robotics_project/supervisor/src/specificworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
 specificmonitor.h
-/home/salabeta/robotics_project/supervisor/src/specificmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
 commonbehaviorI.h
-/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
 apriltagsI.h
 -
 AprilTags.h
@@ -178,89 +206,61 @@ DifferentialRobot.h
 GotoPoint.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/moc_apriltagsI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_apriltagsI.cpp
 apriltagsI.h
-/home/salabeta/robotics_project/supervisor/src/apriltagsI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
 
-/home/salabeta/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
 commonbehaviorI.h
-/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
 
-/home/salabeta/robotics_project/supervisor/src/moc_genericmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericmonitor.cpp
 genericmonitor.h
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/moc_genericworker.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericworker.cpp
 genericworker.h
-/home/salabeta/robotics_project/supervisor/src/genericworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
 
-/home/salabeta/robotics_project/supervisor/src/moc_specificmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificmonitor.cpp
 specificmonitor.h
-/home/salabeta/robotics_project/supervisor/src/specificmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/moc_specificworker.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificworker.cpp
 specificworker.h
-/home/salabeta/robotics_project/supervisor/src/specificworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
 
-/home/salabeta/robotics_project/supervisor/src/specificmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.cpp
 specificmonitor.h
-/home/salabeta/robotics_project/supervisor/src/specificmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/specificmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
 genericmonitor.h
-/home/salabeta/robotics_project/supervisor/src/genericmonitor.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
 
-/home/salabeta/robotics_project/supervisor/src/specificworker.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.cpp
 specificworker.h
-/home/salabeta/robotics_project/supervisor/src/specificworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
 
-/home/salabeta/robotics_project/supervisor/src/specificworker.h
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
 -
 
-/home/salabeta/robotics_project/supervisor/src/supervisor_automoc.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/supervisor_automoc.cpp
 moc_apriltagsI.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_apriltagsI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_apriltagsI.cpp
 moc_commonbehaviorI.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
 moc_genericmonitor.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_genericmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericmonitor.cpp
 moc_genericworker.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_genericworker.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericworker.cpp
 moc_specificmonitor.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_specificmonitor.cpp
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificmonitor.cpp
 moc_specificworker.cpp
-/home/salabeta/robotics_project/supervisor/src/moc_specificworker.cpp
-
-/opt/robocomp/classes/qlog/qlog.cpp
-qlog.h
-/opt/robocomp/classes/qlog/qlog.h
-
-/opt/robocomp/classes/qlog/qlog.h
-config.h
-/opt/robocomp/classes/qlog/config.h
-QtCore
--
-iostream
--
-Logger.h
--
-
-/opt/robocomp/classes/rapplication/rapplication.cpp
-rapplication.h
-/opt/robocomp/classes/rapplication/rapplication.h
-
-/opt/robocomp/classes/rapplication/rapplication.h
-Ice/Ice.h
--
-Ice/Application.h
--
-IceUtil/IceUtil.h
--
-QtCore
--
+/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificworker.cpp
 
 /opt/robocomp/include/innermodel/innermodel.h
 stdexcept

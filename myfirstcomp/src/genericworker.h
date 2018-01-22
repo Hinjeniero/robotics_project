@@ -34,6 +34,8 @@
 #include <DifferentialRobot.h>
 #include <RCISMousePicker.h>
 
+
+
 #define CHECK_PERIOD 5000
 #define BASIC_PERIOD 100
 
@@ -69,10 +71,10 @@ public:
 	QMutex *mutex;
 	
 
-	GetAprilTagsPrx getapriltags_proxy;
-	JointMotorPrx jointmotor_proxy;
-	LaserPrx laser_proxy;
 	DifferentialRobotPrx differentialrobot_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
+	LaserPrx laser_proxy;
+	JointMotorPrx jointmotor_proxy;
 
 	virtual void pickingBox() = 0;
 	virtual void stop() = 0;
@@ -89,6 +91,7 @@ protected:
 
 public slots:
 	virtual void compute() = 0;
+
 
 signals:
 	void kill();

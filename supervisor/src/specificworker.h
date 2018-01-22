@@ -48,6 +48,7 @@ public:
 	State robotState = State::SEARCH;
 	void newAprilTag(const tagsList &tags);
 	tag nearestAprilTag(const tagsList &tags);
+	tag testAprilTag(const tagsList &tags);
 public slots:
 	void compute(); 	
     
