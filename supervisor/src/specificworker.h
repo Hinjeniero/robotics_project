@@ -53,7 +53,10 @@ public slots:
 	void compute(); 	
     
 private:
-	int current = 10;
+	bool searching = false; //false = initial box founded
+	int initialBox = 11;
+	int currentBox = 11;
+	int dropPlace = 0;
 	InnerModel *innermodel;	
 	tag currentTag;
 	QVec target;

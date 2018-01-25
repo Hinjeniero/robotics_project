@@ -229,21 +229,21 @@ void SpecificWorker::setPick(const RoboCompRCISMousePicker::Pick& pick)
 }
 
 void SpecificWorker::go(const string &nodo, const float x, const float y, const float alpha){
-  if(nodo == "") {
-    target.setTarget(x, y);
-    robotState = State::IDLE;
-    std::cout << "MYFIRSTCOMP - go()" << endl;
-    std::cout << "Location x -> " << x << " was chosen." << endl;
-    std::cout << "Location z -> " << y << " was chosen." << endl;     
-  } else {
-    
+  std::cout << "MYFIRSTCOMP - go()" << endl;
+  // if(nodo == "") {
+  target.setTarget(x, y);
+  robotState = State::IDLE;
+  std::cout << "MYFIRSTCOMP - go()" << endl;
+  std::cout << "Location x -> " << x << " was chosen." << endl;
+  std::cout << "Location z -> " << y << " was chosen." << endl;     
+ /* } else {    
     target.setTarget(x, y);
     robotState = State::IDLE;
     std::cout << "MYFIRSTCOMP - go()" << endl;    
     std::cout << "MYFIRSTCOMP - De camino a "<< nodo << endl;
     std::cout << "Location x -> " << x << " was chosen." << endl;
     std::cout << "Location z -> " << y << " was chosen." << endl;      
-  }
+  }*/
 
 }
 

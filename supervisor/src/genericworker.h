@@ -46,7 +46,6 @@ using namespace RoboCompAprilTags;
 
 
 
-
 class GenericWorker : 
 #ifdef USE_QTGUI
 public QWidget, public Ui_guiDlg

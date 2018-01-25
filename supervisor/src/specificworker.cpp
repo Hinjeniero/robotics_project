@@ -69,7 +69,7 @@ void SpecificWorker::compute()
 
 void SpecificWorker::searchState(){
     gotopoint_proxy->turn(1);
-    std::cout << "SEARCH - Buscando la id " << current <<endl;
+    std::cout << "SEARCH - Buscando la id " << currentBox <<endl;
     if(targetActive){  
       robotState = State::WAIT;
       std::cout << "SEARCH - De camino a X = "<< target.x() << " Z = " << target.z() <<endl;
@@ -82,7 +82,7 @@ void SpecificWorker::waitState(){
   std::cout << "WAIT" << endl;
   if (gotopoint_proxy->atTarget()){
     std::cout << "arrived at target wait" << endl;
-    std::cout << "Camino a la esquina entre 0 y 1" <<endl;
+    gotopoint_proxy->stop();
     //TODO Aquí ha llegado a la caja
     //gotopoint_proxy->go("", 1700, 1900, 0);
     
@@ -123,13 +123,19 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
 void SpecificWorker::newAprilTag(const tagsList &tags){
   std::cout << "newAprilTag()" << endl;
   std::cout << "currentTag.id = " << currentTag.id << endl;
-  
-  if (currentTag.id != 10) {
+  testAprilTag(tags);
+  /*if(!searching) {					// initialBox not founded yet
+    std::cout << "!searching" << endl;
+    if (currentTag.id == initialBox)			// searching for initialBox
+      currentTag = testAprilTag(tags);
+  } else {						// initialBox founded
+    std::cout << "searching" << endl;
+    if (currentTag.id == currentBox)			// searching for currentBox
     currentTag = testAprilTag(tags);
-  }  
+  }  */
   
-  if (robotState == State::SEARCH && currentTag.id == 10) {
-    std::cout << "Encontrada! Current - "<< current << " -> tag id ->" << currentTag.id <<endl;
+  if (robotState == State::SEARCH && currentTag.id == currentBox) {
+    std::cout << "Encontrada! Current - "<< currentBox << " -> tag id ->" << currentTag.id <<endl;
     std::cout << "Antes de transformalar las coordenadas X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
     target = innermodel->transform("world", QVec::vec3(currentTag.tx, 0, currentTag.tz), "rgbd");
     targetActive = true;
@@ -139,19 +145,27 @@ void SpecificWorker::newAprilTag(const tagsList &tags){
   std::cout << "*****************************************" << endl;
 }
 
-tag SpecificWorker::testAprilTag(const tagsList &tags){
-  //choose only the box with the id 10 on it
+tag SpecificWorker::testAprilTag(const tagsList &tags) {
+  //choose only the box with the currentBox's id on it
+  std::cout << "TESTAPRILTAGS" << endl;
   for (auto t: tags) {
-    if(t.id == 10){
-      currentTag = t;
-      std::cout << "testAprilTag() devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
+    if(!searching) {
+      if (t.id == initialBox) {
+	currentTag = t;
+	std::cout << "testAprilTag()- !searching devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
+      }
+    } else {
+      if (t.id == currentBox) {
+	currentTag = t;
+	std::cout << "testAprilTag() searching devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
+      }
     }
   }
  return currentTag;
 }
 
 tag SpecificWorker::nearestAprilTag(const tagsList &tags){
-  //sin periferia, la mas cercana de las que vea
+/*  //sin periferia, la mas cercana de las que vea
   //-----------------------------
   float dist = sqrt(pow(tags[0].tx, 2)+pow(tags[0].tz, 2));
   tag tmin = tags[0];
@@ -163,7 +177,7 @@ tag SpecificWorker::nearestAprilTag(const tagsList &tags){
       tmin = t;
     }
   }
- return tmin;
+ return tmin;*/
 }
 
 void SpecificWorker::handlerState() {
