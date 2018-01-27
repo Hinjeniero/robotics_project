@@ -1,5 +1,5 @@
 /*
- *    Copyright (C) 2017 by YOUR NAME HERE
+ *    Copyright (C) 2018 by YOUR NAME HERE
  *
  *    This file is part of RoboComp
  *
@@ -29,7 +29,7 @@
 #include <CommonBehavior.h>
 #include <GotoPoint.h>
 #include <DifferentialRobot.h>
-#include <AprilTags.h>
+#include <GetAprilTags.h>
 
 
 
@@ -42,7 +42,8 @@ using namespace std;
 
 using namespace RoboCompGotoPoint;
 using namespace RoboCompDifferentialRobot;
-using namespace RoboCompAprilTags;
+using namespace RoboCompGetAprilTags;
+
 
 
 
@@ -64,18 +65,20 @@ public:
 	QMutex *mutex;
 	
 
-	DifferentialRobotPrx differentialrobot_proxy;
 	GotoPointPrx gotopoint_proxy;
+	DifferentialRobotPrx differentialrobot_proxy;
+	GetAprilTagsPrx getapriltags_proxy;
 
-	virtual void newAprilTag(const tagsList &tags) = 0;
 
 
 protected:
 	QTimer timer;
 	int Period;
 
+
 public slots:
 	virtual void compute() = 0;
+
 signals:
 	void kill();
 };

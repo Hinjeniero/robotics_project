@@ -35,9 +35,10 @@ class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
 public:
-	SpecificWorker(MapPrx& mprx);	
+	SpecificWorker(MapPrx& mprx);
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
+	
 	void searchState();
 	void waitState();
 	void idleState();
@@ -46,23 +47,63 @@ public:
 	enum State {SEARCH, WAIT, IDLE, HANDLER};
       /*Present state of the robot*/
 	State robotState = State::SEARCH;
-	void newAprilTag(const tagsList &tags);
-	tag nearestAprilTag(const tagsList &tags);
-	tag testAprilTag(const tagsList &tags);
+	//void newAprilTag(const tagsList &tags);
+	//void testAprilTag(const tagsList &tags);
+	RoboCompGetAprilTags::listaMarcas lstMarcas;
+	void getMarcas();
+	void newAprilTag(RoboCompGetAprilTags::listaMarcas& tags);
+	
+	
+	
 public slots:
-	void compute(); 	
+	void compute();
     
 private:
-	bool searching = false; //false = initial box founded
-	int initialBox = 11;
-	int currentBox = 11;
-	int dropPlace = 0;
-	InnerModel *innermodel;	
-	tag currentTag;
-	QVec target;
-	bool targetActive = false;
-	
-};
+  struct Tag{
+    Tag(){};
+    
+    QMutex mutex;
+    float tx,tz;
+    int id;    
+        
+    void setTag(int _id, float _x, float _z) {
+      QMutexLocker ml(&mutex);
+      id = _id;
+      tx = _x;
+      tz = _z;      
+    }
+    
+    int getID() {
+      QMutexLocker ml(&mutex);
+      return id;
+    }
+    
+    int getX() {
+      QMutexLocker ml(&mutex);
+      return tx;
+    }
 
+    int getZ() {
+      QMutexLocker ml(&mutex);
+      return tz;
+    }    
+  };
+  
+  bool searching = false; //false = initial box founded
+  int initialBox = 11;
+  int currentBox = 11;
+  int dropPlace = 0;
+  InnerModel *innermodel;	
+  Tag currentTag;
+  Tag auxTag;
+  QVec target;
+  QVec auxTarget;
+  float boxDistance;
+  bool targetActive = false;
+  
+  Tag tag;
+  RoboCompGetAprilTags::listaMarcas listaMarcas;
+
+};
 #endif
 
