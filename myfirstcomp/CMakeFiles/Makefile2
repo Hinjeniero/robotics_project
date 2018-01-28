@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ronniejd/robocomp/components/robotics_project/myfirstcomp
+CMAKE_SOURCE_DIR = /home/hinjeniero/robotics_project/myfirstcomp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ronniejd/robocomp/components/robotics_project/myfirstcomp
+CMAKE_BINARY_DIR = /home/hinjeniero/robotics_project/myfirstcomp
 
 #=============================================================================
 # Directory level rules for directory src
@@ -85,7 +85,7 @@ src/preinstall:
 src/CMakeFiles/myfirstcomp.dir/all: src/CMakeFiles/myfirstcomp_automoc.dir/all
 	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/depend
 	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target myfirstcomp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27 "Built target myfirstcomp"
 .PHONY : src/CMakeFiles/myfirstcomp.dir/all
 
 # Include target in all.
@@ -95,9 +95,9 @@ all: src/CMakeFiles/myfirstcomp.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/myfirstcomp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles 28
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/myfirstcomp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles 0
 .PHONY : src/CMakeFiles/myfirstcomp.dir/rule
 
 # Convenience name for target.
@@ -122,14 +122,14 @@ clean: src/CMakeFiles/myfirstcomp.dir/clean
 src/CMakeFiles/myfirstcomp_automoc.dir/all:
 	$(MAKE) -f src/CMakeFiles/myfirstcomp_automoc.dir/build.make src/CMakeFiles/myfirstcomp_automoc.dir/depend
 	$(MAKE) -f src/CMakeFiles/myfirstcomp_automoc.dir/build.make src/CMakeFiles/myfirstcomp_automoc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles --progress-num=28 "Built target myfirstcomp_automoc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=28 "Built target myfirstcomp_automoc"
 .PHONY : src/CMakeFiles/myfirstcomp_automoc.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/myfirstcomp_automoc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/myfirstcomp_automoc.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ronniejd/robocomp/components/robotics_project/myfirstcomp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles 0
 .PHONY : src/CMakeFiles/myfirstcomp_automoc.dir/rule
 
 # Convenience name for target.

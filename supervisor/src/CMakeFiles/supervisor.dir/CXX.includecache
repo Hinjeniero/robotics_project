@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/ronniejd/robocomp/classes/qlog/qlog.cpp
+/home/hinjeniero/robocomp/classes/qlog/qlog.cpp
 qlog.h
-/home/ronniejd/robocomp/classes/qlog/qlog.h
+/home/hinjeniero/robocomp/classes/qlog/qlog.h
 
-/home/ronniejd/robocomp/classes/qlog/qlog.h
+/home/hinjeniero/robocomp/classes/qlog/qlog.h
 config.h
-/home/ronniejd/robocomp/classes/qlog/config.h
+/home/hinjeniero/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
@@ -20,11 +20,11 @@ iostream
 Logger.h
 -
 
-/home/ronniejd/robocomp/classes/rapplication/rapplication.cpp
+/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp
 rapplication.h
-/home/ronniejd/robocomp/classes/rapplication/rapplication.h
+/home/hinjeniero/robocomp/classes/rapplication/rapplication.h
 
-/home/ronniejd/robocomp/classes/rapplication/rapplication.h
+/home/hinjeniero/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
 -
 Ice/Application.h
@@ -34,21 +34,7 @@ IceUtil/IceUtil.h
 QtCore
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/AprilTags.cpp
-AprilTags.h
--
-Ice/LocalException.h
--
-Ice/ObjectFactory.h
--
-Ice/BasicStream.h
--
-Ice/Object.h
--
-IceUtil/Iterator.h
--
-
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/CommonBehavior.cpp
+/home/hinjeniero/robotics_project/supervisor/src/CommonBehavior.cpp
 CommonBehavior.h
 -
 Ice/LocalException.h
@@ -62,7 +48,7 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/DifferentialRobot.cpp
+/home/hinjeniero/robotics_project/supervisor/src/DifferentialRobot.cpp
 DifferentialRobot.h
 -
 Ice/LocalException.h
@@ -76,7 +62,21 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/GotoPoint.cpp
+/home/hinjeniero/robotics_project/supervisor/src/GetAprilTags.cpp
+GetAprilTags.h
+-
+Ice/LocalException.h
+-
+Ice/ObjectFactory.h
+-
+Ice/BasicStream.h
+-
+Ice/Object.h
+-
+IceUtil/Iterator.h
+-
+
+/home/hinjeniero/robotics_project/supervisor/src/GotoPoint.cpp
 GotoPoint.h
 -
 Ice/LocalException.h
@@ -90,27 +90,11 @@ Ice/Object.h
 IceUtil/Iterator.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.cpp
-apriltagsI.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
-
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
-QtCore/QObject
--
-Ice/Ice.h
--
-AprilTags.h
--
-config.h
--
-genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
-
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.cpp
+/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.cpp
 commonbehaviorI.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
+/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
+/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.h
 QtCore/QObject
 -
 Ice/Ice.h
@@ -120,37 +104,37 @@ CommonBehavior.h
 config.h
 -
 genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 genericmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
+/home/hinjeniero/robotics_project/supervisor/src/config.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.cpp
 genericmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 Ice/Ice.h
 -
 QtCore
 -
 genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 config.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
+/home/hinjeniero/robotics_project/supervisor/src/config.h
 qlog/qlog.h
 -
 CommonBehavior.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.cpp
 genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 config.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
+/home/hinjeniero/robotics_project/supervisor/src/config.h
 QtGui
 -
 stdint.h
@@ -165,10 +149,10 @@ GotoPoint.h
 -
 DifferentialRobot.h
 -
-AprilTags.h
+GetAprilTags.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/main.cpp
+/home/hinjeniero/robotics_project/supervisor/src/main.cpp
 signal.h
 -
 QtCore
@@ -186,81 +170,73 @@ rapplication/rapplication.h
 qlog/qlog.h
 -
 config.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/config.h
+/home/hinjeniero/robotics_project/supervisor/src/config.h
 genericmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 specificworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
+/home/hinjeniero/robotics_project/supervisor/src/specificworker.h
 specificmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.h
 commonbehaviorI.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
-apriltagsI.h
--
-AprilTags.h
+/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.h
+GetAprilTags.h
 -
 DifferentialRobot.h
 -
 GotoPoint.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_apriltagsI.cpp
-apriltagsI.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/apriltagsI.h
-
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
 commonbehaviorI.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/commonbehaviorI.h
+/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_genericmonitor.cpp
 genericmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_genericworker.cpp
 genericworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericworker.h
+/home/hinjeniero/robotics_project/supervisor/src/genericworker.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_specificmonitor.cpp
 specificmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_specificworker.cpp
 specificworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
+/home/hinjeniero/robotics_project/supervisor/src/specificworker.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.cpp
 specificmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.h
 genericmonitor.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/genericmonitor.h
+/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/specificworker.cpp
 specificworker.h
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
+/home/hinjeniero/robotics_project/supervisor/src/specificworker.h
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/specificworker.h
+/home/hinjeniero/robotics_project/supervisor/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
 -
 
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/supervisor_automoc.cpp
-moc_apriltagsI.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_apriltagsI.cpp
+/home/hinjeniero/robotics_project/supervisor/src/supervisor_automoc.cpp
 moc_commonbehaviorI.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_commonbehaviorI.cpp
 moc_genericmonitor.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_genericmonitor.cpp
 moc_genericworker.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_genericworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_genericworker.cpp
 moc_specificmonitor.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificmonitor.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_specificmonitor.cpp
 moc_specificworker.cpp
-/home/ronniejd/robocomp/components/robotics_project/supervisor/src/moc_specificworker.cpp
+/home/hinjeniero/robotics_project/supervisor/src/moc_specificworker.cpp
 
 /opt/robocomp/include/innermodel/innermodel.h
 stdexcept
@@ -4228,38 +4204,6 @@ QtGui/qwidget.h
 QtGui/qwidget.h
 -
 
-src/AprilTags.h
-Ice/ProxyF.h
--
-Ice/ObjectF.h
--
-Ice/Exception.h
--
-Ice/LocalObject.h
--
-Ice/StreamHelpers.h
--
-Ice/Proxy.h
--
-Ice/Object.h
--
-Ice/Outgoing.h
--
-Ice/OutgoingAsync.h
--
-Ice/Incoming.h
--
-Ice/Direct.h
--
-IceUtil/ScopedArray.h
--
-IceUtil/Optional.h
--
-Ice/StreamF.h
--
-Ice/UndefSysMacros.h
--
-
 src/CommonBehavior.h
 Ice/ProxyF.h
 -
@@ -4326,6 +4270,38 @@ Ice/StreamF.h
 Ice/UndefSysMacros.h
 -
 
+src/GetAprilTags.h
+Ice/ProxyF.h
+-
+Ice/ObjectF.h
+-
+Ice/Exception.h
+-
+Ice/LocalObject.h
+-
+Ice/StreamHelpers.h
+-
+Ice/Proxy.h
+-
+Ice/Object.h
+-
+Ice/Outgoing.h
+-
+Ice/OutgoingAsync.h
+-
+Ice/Incoming.h
+-
+Ice/Direct.h
+-
+IceUtil/ScopedArray.h
+-
+IceUtil/Optional.h
+-
+Ice/StreamF.h
+-
+Ice/UndefSysMacros.h
+-
+
 src/GotoPoint.h
 Ice/ProxyF.h
 -
@@ -4358,18 +4334,6 @@ Ice/StreamF.h
 Ice/UndefSysMacros.h
 -
 
-src/apriltagsI.h
-QtCore/QObject
--
-Ice/Ice.h
--
-AprilTags.h
--
-config.h
--
-genericworker.h
-src/genericworker.h
-
 src/config.h
 
 src/genericworker.h
@@ -4389,7 +4353,7 @@ GotoPoint.h
 -
 DifferentialRobot.h
 -
-AprilTags.h
+GetAprilTags.h
 -
 
 src/ui_mainUI.h

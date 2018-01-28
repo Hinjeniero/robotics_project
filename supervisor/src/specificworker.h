@@ -47,10 +47,9 @@ public:
 	enum State {SEARCH, WAIT, IDLE, HANDLER};
       /*Present state of the robot*/
 	State robotState = State::SEARCH;
-	//void newAprilTag(const tagsList &tags);
-	//void testAprilTag(const tagsList &tags);
 	RoboCompGetAprilTags::listaMarcas lstMarcas;
 	void getMarcas();
+	void printAllTransformations(const ::RoboCompGetAprilTags::marca t);
 	void newAprilTag(RoboCompGetAprilTags::listaMarcas& tags);
 	
 	
@@ -59,6 +58,7 @@ public slots:
 	void compute();
     
 private:
+  
   struct Tag{
     Tag(){};
     
@@ -89,20 +89,48 @@ private:
     }    
   };
   
-  bool searching = false; //false = initial box founded
+  //Para saber que cajas hemos movido
+  struct BoxesList{
+    std::vector<RoboCompGetAprilTags::marca> movedBoxes;
+    QMutex mut;
+    
+    void addBox(marca m){
+      QMutexLocker ml(&mut);
+      movedBoxes.push_back(m);
+    }    
+    bool containsBox(marca m){
+      QMutexLocker ml(&mut);
+      for (auto mark:movedBoxes){
+	 if (m.id == mark.id)
+	   return true;
+      }
+      return false;
+    }
+    void deleteAllBoxes(){
+      QMutexLocker ml(&mut);
+      movedBoxes.clear();
+    }
+    bool isEmpty(int index){
+      QMutexLocker ml(&mut);
+      return movedBoxes.empty();
+    }
+    int size(){
+      QMutexLocker ml(&mut);
+      return movedBoxes.size();
+    }
+  };
+  
   int initialBox = 11;
-  int currentBox = 11;
-  int dropPlace = 0;
+  int currentBox = initialBox;
+  int dropPlace = 0; //0, 1, 2, 3, depends in which corner do we want to be the dumpster;
   InnerModel *innermodel;	
   Tag currentTag;
-  Tag auxTag;
+  RoboCompGetAprilTags::marca currentMarca;
   QVec target;
-  QVec auxTarget;
   float boxDistance;
   bool targetActive = false;
-  
+  BoxesList boxesHistory;
   Tag tag;
-  RoboCompGetAprilTags::listaMarcas listaMarcas;
 
 };
 #endif

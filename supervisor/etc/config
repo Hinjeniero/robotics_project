@@ -9,7 +9,7 @@ AprilTagsTopic.Endpoints=tcp -p 10261
 # Proxies for required interfaces
 GotoPointProxy = gotopoint:tcp -h localhost -p 11111
 DifferentialRobotProxy = differentialrobot:tcp -h localhost -p 10004
-GetAprilTagsProxy = getapriltags:tcp -h localhost -p 10006
+GetAprilTagsProxy = getapriltags:tcp -h localhost -p 14310
 
 # This property is used by the clients to connect to IceStorm.
 TopicManager.Proxy=IceStorm/TopicManager:default -p 9999

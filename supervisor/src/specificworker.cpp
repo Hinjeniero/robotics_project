@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/ronniejd/robocomp/files/innermodel/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/hinjeniero/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -44,165 +44,131 @@ bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 void SpecificWorker::compute()
 {
   RoboCompDifferentialRobot::TBaseState state;
-  differentialrobot_proxy->getBaseState(state);
-  
-  getMarcas();
+  try{
+    differentialrobot_proxy->getBaseState(state);
+  }catch(const Ice::Exception &ex) {
+    std::cout << "Exception differentialrobot_proxy in supervisor - "<< ex <<endl; 
+  }
   innermodel->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); 
-  
-   
   
   try
   {
       switch(robotState) {
 	case State::SEARCH:
-	  searchState();
+	  try
+	  {	
+	    searchState();
+	  }catch(const Ice::Exception &ex) {
+	    std::cout << "Exception in searchState - "<< ex <<endl; 
+	  }
 	  break;
 	case State::WAIT:
-	  waitState();
+	  try
+	  {	
+	    waitState();
+	  }catch(const Ice::Exception &ex) {
+	    std::cout << "Exception in waitState - "<< ex <<endl; 
+	  }
 	  break;
 	case State::IDLE:
-	  idleState();
+	  try
+	  {	
+	    idleState();
+	  }catch(const Ice::Exception &ex) {
+	    std::cout << "Exception in idleState - "<< ex <<endl; 
+	  }
 	  break;
 	case State::HANDLER:
-	  handlerState();
+	  try
+	  {	
+	    handlerState();
+	  }catch(const Ice::Exception &ex) {
+	    std::cout << "Exception in handlerState - "<< ex <<endl; 
+	  }
 	  break;
       }
-  }catch(const exception e) {
-    
+  }catch(const Ice::Exception &ex) {
+    std::cout << "Exception in switch robotState supervisor - "<< ex <<endl; 
   }
 }
 
 void SpecificWorker::searchState(){
     gotopoint_proxy->turn(1);
     std::cout << "SEARCH - Buscando la id " << currentBox <<endl;
+    getMarcas();
     if(targetActive){  
-      
       std::cout << "SEARCH - De camino a target X = "<< target.x() << " Z = " << target.z() <<endl;
-      std::cout << "SEARCH - De camino a auxTarget X = "<< auxTarget.x() << " Z = " << auxTarget.z() <<endl;
-      //target = innermodel->transform("world", QVec::vec3(target.x(), 0, target.z()), "base");
-      
       gotopoint_proxy->go("", target.x(), target.z(), 0);      
       robotState = State::WAIT;
     }
 }
 
 void SpecificWorker::waitState(){
-  std::cout << "WAIT" << endl;
+  std::cout << "WAIT state" << endl;
   if (gotopoint_proxy->atTarget()){
-    std::cout << "arrived at target wait" << endl;
     gotopoint_proxy->stop();
-    //TODO Aquí ha llegado a la caja
-    //gotopoint_proxy->go("", 1700, 1900, 0);
-    
-    //robotState = State::IDLE;
+    boxesHistory.addBox(currentMarca);
+    gotopoint_proxy->go("",0,0,0);
+    robotState = State::IDLE;
   }
 }
 
 void SpecificWorker::idleState(){
-  std::cout << "IDLE" << endl;
+  std::cout << "IDLE state" << endl;
   if (gotopoint_proxy->atTarget()){
-    std::cout << "atTarget()" << endl;
-    //current++;
-    //if (current > 13)
-    //  current = 10; //TODO delete this later :) 
+    std::cout << "Idle state, back to the beginning" << endl;
     gotopoint_proxy->stop();
     targetActive = false;
-    //robotState = State::SEARCH;
+    currentBox++;
+    robotState = State::SEARCH;
   }
+}
+
+void SpecificWorker::handlerState() {
+  cout << "REALIZANDO TRABAJO MANUAL "<< endl;
+  //TODO switch case to go to whatever corner is designated after picking the box
+  robotState = State::IDLE;
 }
 
 void SpecificWorker::getMarcas () {
   try{
     lstMarcas = getapriltags_proxy->checkMarcas();
   }catch(const Ice::Exception &e){
-      std::cout << "Problema con getapriltags_proxy->checkMarcas();" << endl;
+    std::cout << "Problema con getapriltags_proxy->checkMarcas();" << endl;
   }
+  
   for(auto l:lstMarcas) {
     std::cout << "marca.id ->" << l.id << endl;
-    if(!searching) {					// initialBox not founded yet
-	std::cout << "!searching" << endl;
-	if (l.id == initialBox){			// searching for initialBox
-	  std::cout << "Encontrada la caja inicial con l.id = " << l.id << " lx = " << l.tx << " lz = " << l.tz << endl;
-	  auxTarget = innermodel->transform("world",QVec::vec3(l.tx, 0, l.tz) , "base");
-	  auxTag.id = l.id;
-	  auxTag.tx = l.tx;
-	  auxTag.tz = l.tz;	  
-	  //std::cout << "Encontrada la caja inicial con auxTarget.x = " << auxTarget.x() << " auxTarget.z() = " << auxTarget.z() << endl;
-	  target = innermodel->transform("world", QVec::vec3(auxTag.getX(), 0, auxTag.getZ()) , "base");
-	  std::cout << "Encontrada la caja inicial con target.x = " << target.x() << " target.z() = " << target.z() << endl;
-	  
-	  boxDistance = target.norm2();
-	  targetActive = true;
-	}
-    } else {						// initialBox founded
-	std::cout << "searching" << endl;
-	if (l.id == currentBox){			// searching for currentBox
-	  //currentTag = l;
-	  std::cout << "Encontrada la segunda caja" << endl;
-	  targetActive = true;
-	}
-    }     
+    if (l.id == currentBox && !boxesHistory.containsBox(l)){
+      std::cout << "Found current box, id = " << l.id << ", lx = " << l.tx << ", lz = " << l.tz << endl;
+      printAllTransformations(l);
+      
+      std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << endl;
+      currentMarca = l;
+      boxDistance = target.norm2(); //Initial box distance
+      targetActive = true;
+      break;
+    }   
   }
+}
+
+void SpecificWorker::printAllTransformations(const ::RoboCompGetAprilTags::marca t){
+	  std::cout << "NORMAL POSITION |" <<t.tx<<","<<t.tz<<"|"<<endl;
+	  QVec dst_1 = innermodel->transform("world", QVec::vec3(t.tx, 0, t.tz), "base");
+	  std::cout << "FROM BASE TO WORLD |" <<dst_1.x()<<","<<dst_1.z()<<"|"<<endl;
+	  QVec dst_2 = innermodel->transform("world", QVec::vec3(t.tx, 0, t.tz), "rgbd");
+	  std::cout << "FROM RGBD TO WORLD |" <<dst_2.x()<<","<<dst_2.z()<<"|"<<endl;
+	  QVec dst_3 = innermodel->transform("base", QVec::vec3(t.tx, 0, t.tz), "world");
+	  std::cout << "FROM WORLD TO BASE |" <<dst_3.x()<<","<<dst_3.z()<<"|"<<endl;
+	  QVec dst_4 = innermodel->transform("base", QVec::vec3(t.tx, 0, t.tz), "rgbd");
+	  std::cout << "FROM RGBD TO BASE |" <<dst_4.x()<<","<<dst_4.z()<<"|"<<endl;
+	  QVec dst_5 = innermodel->transform("rgbd", QVec::vec3(t.tx, 0, t.tz), "world");
+	  std::cout << "FROM WORLD TO RGBD |" <<dst_5.x()<<","<<dst_5.z()<<"|"<<endl;
+	  QVec dst_6 = innermodel->transform("rgbd", QVec::vec3(t.tx, 0, t.tz), "base");
+	  std::cout << "FROM BASE TO RGBD |" <<dst_6.x()<<","<<dst_6.z()<<"|"<<endl;
 }
 
 /*
-void SpecificWorker::newAprilTag(const tagsList &tags){
-  for(auto t: tags)
-  {
-    if (robotState == State::SEARCH && t.id == current){
-      std::cout << "Current - "<<current << " <-> tag id -" << t.id <<endl;
-      target = innermodel->transform("world", QVec::vec3(t.tx, t.ty, t.tz), "rgbd");
-      currentTag = t;
-      targetActive = true;
-    }
-    std::cout << t.id << endl;
-    std::cout << t.tx << " " << t.ty << " " << t.tz << endl;  
-    std::cout << "*****************************************" << endl;
-  }
-}*/
-
-
-/*void SpecificWorker::newAprilTag(const tagsList &tags){
-  std::cout << "newAprilTag()" << endl;
-  std::cout << "currentTag.id = " << currentTag.id << endl;
-  testAprilTag(tags);*/
-  /*if(!searching) {					// initialBox not founded yet
-    std::cout << "!searching" << endl;
-    if (currentTag.id == initialBox)			// searching for initialBox
-      currentTag = testAprilTag(tags);
-  } else {						// initialBox founded
-    std::cout << "searching" << endl;
-    if (currentTag.id == currentBox)			// searching for currentBox
-    currentTag = testAprilTag(tags);
-  }  */
-  
-  /*if (robotState == State::SEARCH && currentTag.id == currentBox) {
-    std::cout << "Encontrada! Current - "<< currentBox << " -> tag id ->" << currentTag.id <<endl;
-    std::cout << "Antes de transformalar las coordenadas X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
-    target = innermodel->transform("world", QVec::vec3(currentTag.tx, 0, currentTag.tz), "rgbd");
-    std::cout << "World - rgbd -> X = "<< target.x() << " Z = " << target.z() << endl;
-    
-    target = innermodel->transform("world", QVec::vec3(currentTag.tx, 0, currentTag.tz), "base");
-    std::cout << "World - Base -> X = "<< target.x() << " Z = " << target.z() << endl;
-    
-    target = innermodel->transform("base", QVec::vec3(currentTag.tx, 0, currentTag.tz), "world");
-    std::cout << "base - world -> X = "<< target.x() << " Z = " << target.z() << endl;
-    
-    target = innermodel->transform("base", QVec::vec3(currentTag.tx, 0, currentTag.tz), "rgbd");
-    std::cout << "Base - rgbd -> X = "<< target.x() << " Z = " << target.z() << endl;
-    
-    target = innermodel->transform("rgbd", QVec::vec3(currentTag.tx, 0, currentTag.tz), "base");
-    std::cout << "rgbd - Base -> X = "<< target.x() << " Z = " << target.z() << endl;
-    
-    target = innermodel->transform("rgbd", QVec::vec3(currentTag.tx, 0, currentTag.tz), "world");
-    std::cout << "rgbd - world -> X = "<< target.x() << " Z = " << target.z() << endl;
-    targetActive = true;
-  }
-  std::cout << currentTag.id << endl;
-  std::cout << "X = "<< target.x() << " Z = " << target.z() << endl;
-  std::cout << "*****************************************" << endl;
-}
-
 void SpecificWorker::testAprilTag(const tagsList &tags) {
   //choose only the box with the currentBox's id on it
   std::cout << "TESTAPRILTAGS" << endl;
@@ -221,8 +187,8 @@ void SpecificWorker::testAprilTag(const tagsList &tags) {
   }
 }
 
-//tag SpecificWorker::nearestAprilTag(const tagsList &tags){
-/*  //sin periferia, la mas cercana de las que vea
+tag SpecificWorker::nearestAprilTag(const tagsList &tags){
+  //sin periferia, la mas cercana de las que vea
   //-----------------------------
   float dist = sqrt(pow(tags[0].tx, 2)+pow(tags[0].tz, 2));
   tag tmin = tags[0];
@@ -234,13 +200,14 @@ void SpecificWorker::testAprilTag(const tagsList &tags) {
       tmin = t;
     }
   }
- return tmin;*/
+ return tmin;
 //}*/
 
-void SpecificWorker::handlerState() {
-  cout << "REALIZANDO TRABAJO MANUAL "<< endl;
-  robotState = State::IDLE;
-}
+
+
+
+
+
 
 
 
