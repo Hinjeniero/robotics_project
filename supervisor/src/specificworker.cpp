@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/ronniejd/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -88,6 +88,7 @@ void SpecificWorker::compute()
 	  }catch(const Ice::Exception &ex) {
 	    std::cout << "Exception in handlerPickState - "<< ex <<endl; 
 	  }
+	  break;
 	case State::HANDLERRELEASE:
 	  try
 	  {	
@@ -103,29 +104,32 @@ void SpecificWorker::compute()
 }
 
 /*State to search for boxes turning indefinitely*/
-void SpecificWorker::searchState(){
-    gotopoint_proxy->turn(0.5); //Turning until it finds a box
+void SpecificWorker::searchState(){    
     std::cout << "SEARCH - Buscando la id " << currentBox <<endl;
+    gotopoint_proxy->turn(0.5); //Turning until it finds a box
     if(targetActive){ //Found the desired box in getMarcas 
       //std::cout << "SEARCH - De camino a target X = "<< target.x() << " Z = " << target.z() <<endl;      
       //gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
+      //targetActive = false;
       robotState = State::WAIT;
-    }
+    } 
 }
 
 /*State waiting for the subcomponent to move the robot until the target location*/
 void SpecificWorker::waitState(){
-  //std::cout << "WAIT state" << endl;
-  gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
-  
+  std::cout << "WAIT" << endl;
+  if (!holdingBox)
+    gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
+    
+  std::cout << "X= "<< target.x() << " Z= " << target.z() << endl;
   if (gotopoint_proxy->atTarget()){ //IF the robot arrived at the target (box)
-    std::cout << "Print attarget in WAIT()" << endl;
-    //boxesHistory.addBox(currentMarca); //Adds the box to the history of moved boxes
+    std::cout << "Print atTarget in WAIT()" << endl;
     if(!holdingBox){ //If is at the box (not holding it yet)
       robotState = State::HANDLERPICK;
       return;
     }      
     //After reaching the corner, has to drop the box
+    std::cout <<" handler state" << endl;
     robotState = State::HANDLERRELEASE;
   }
 }
@@ -134,22 +138,25 @@ void SpecificWorker::waitState(){
 void SpecificWorker::idleState(){
   std::cout << "IDLE state" << endl;
   std::cout << "Idle state, reached target, back at the beginning" << endl;
-  gotopoint_proxy->stop(); //Stops the robot  
   targetActive = false; //Dont have a target anymore to go to
-  currentBox++; //Incrementing index, so the box we look for is the next one
+  if (!holdingBox)
+    currentBox++; //Incrementing index, so the box we look for is the next one
+
   robotState = State::SEARCH; 
 }
 
 /*State manipulating the box with the arm*/
 void SpecificWorker::handlerPickState() {
   cout << "PICKING BOX"<< endl;
-  holdingBox = true;
+  targetActive = false;
   switch(dropPlace){//Decides which corner will be the dropping place
       case 0:{
-	//QVec t = (2000, 0, 2000);
 	std::cout << "case 0" << endl;
-	target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //Setting the target
-	//target.x;
+	//target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //Setting the target
+	gotopoint_proxy->go("",2000,2000,0);
+	holdingBox = true;
+	targetActive =true;
+	//std::cout << "camino a x= " << target.x() << " z= " << target.z() << endl;
 	break;
       }
       case 1:
@@ -188,78 +195,23 @@ void SpecificWorker::getMarcas () {
   for(auto l:lstMarcas) { //For each mark on the list
     //std::cout << "marca.id ->" << l.id << endl;
     //If its the mark of the box that we are looking for, and we didnt move that box before
-    if (l.id == currentBox && !boxesHistory.containsBox(l)){
+    if (l.id == currentBox){
       std::cout << "Found current box, id = " << l.id << ", lx = " << l.tx << ", lz = " << l.tz << endl;
       currentMarca = l;
       if(!holdingBox)
 	target = innermodel->transform("world", QVec::vec3(currentMarca.tx, 0, currentMarca.tz), "base"); //Setting the target
       else
-	target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //TODO CORNER
-      QVec r = innermodel->transform("world", "base");
-      //target.print("target");
-      //r.print("r");
+	//target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //TODO CORNER
+	gotopoint_proxy->go("",2000,2000,0);
        std::cout << "-------------------------------------" << endl;
       
-      
-//	std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << endl;
       boxDistance = target.norm2(); //Initial box distance
-      //std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << " distance = " << boxDistance << endl;
       targetActive = true; //have a target to go to
       break;
     }   
   }
 }
 
-void SpecificWorker::printAllTransformations(const ::RoboCompGetAprilTags::marca t){
-	  std::cout << "NORMAL POSITION |" <<t.tx<<","<<t.tz<<"|"<<endl;
-	  QVec dst_1 = innermodel->transform("world", QVec::vec3(t.tx, 0, t.tz), "base");
-	  std::cout << "FROM BASE TO WORLD |" <<dst_1.x()<<","<<dst_1.z()<<"|"<<endl;
-	  QVec dst_2 = innermodel->transform("world", QVec::vec3(t.tx, 0, t.tz), "rgbd");
-	  std::cout << "FROM RGBD TO WORLD |" <<dst_2.x()<<","<<dst_2.z()<<"|"<<endl;
-	  QVec dst_3 = innermodel->transform("base", QVec::vec3(t.tx, 0, t.tz), "world");
-	  std::cout << "FROM WORLD TO BASE |" <<dst_3.x()<<","<<dst_3.z()<<"|"<<endl;
-	  QVec dst_4 = innermodel->transform("base", QVec::vec3(t.tx, 0, t.tz), "rgbd");
-	  std::cout << "FROM RGBD TO BASE |" <<dst_4.x()<<","<<dst_4.z()<<"|"<<endl;
-	  QVec dst_5 = innermodel->transform("rgbd", QVec::vec3(t.tx, 0, t.tz), "world");
-	  std::cout << "FROM WORLD TO RGBD |" <<dst_5.x()<<","<<dst_5.z()<<"|"<<endl;
-	  QVec dst_6 = innermodel->transform("rgbd", QVec::vec3(t.tx, 0, t.tz), "base");
-	  std::cout << "FROM BASE TO RGBD |" <<dst_6.x()<<","<<dst_6.z()<<"|"<<endl;
-}
-
-/*
-void SpecificWorker::testAprilTag(const tagsList &tags) {
-  //choose only the box with the currentBox's id on it
-  std::cout << "TESTAPRILTAGS" << endl;
-  for (auto t: tags) {
-    if(!searching) {
-      if (t.id == initialBox) {
-	currentTag = t;
-	std::cout << "testAprilTag()- !searching devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
-      }
-    } else {
-      if (t.id == currentBox) {
-	currentTag = t;
-	std::cout << "testAprilTag() searching devolvera -> X = "<< currentTag.tx << " Z = " << currentTag.tz << endl;
-      }
-    }
-  }
-}
-
-tag SpecificWorker::nearestAprilTag(const tagsList &tags){
-  //sin periferia, la mas cercana de las que vea
-  //-----------------------------
-  float dist = sqrt(pow(tags[0].tx, 2)+pow(tags[0].tz, 2));
-  tag tmin = tags[0];
-  for (auto t: tags)
-  {
-    float aux = sqrt(pow(t.tx, 2)+pow(t.tz, 2));
-    if(aux < dist){
-      dist = aux;
-      tmin = t;
-    }
-  }
- return tmin;
-//}*/
 
 
 

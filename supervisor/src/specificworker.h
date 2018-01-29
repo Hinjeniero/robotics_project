@@ -50,8 +50,6 @@ public:
 	State robotState = State::SEARCH;
 	/*Gets all the marcas from getapriltags*/
 	void getMarcas();
-	/*Prints all transformations possibles between coordinates (points of view)*/
-	void printAllTransformations(const ::RoboCompGetAprilTags::marca t);
 	
 public slots:
 	void compute();
@@ -120,11 +118,11 @@ private:
     }
   };
   
+  InnerModel *innermodel; //Map 
   int initialBox = 11; //Initial box to search
   int currentBox = initialBox; //Current box that we are searching for
   int dropPlace = 0; //0, 1, 2, 3, depends in which corner do we want to be the dumpster;
   bool holdingBox = false; //Says if the robot is holding the box
-  InnerModel *innermodel; //Map 
   Tag currentTag; //Tag that we are manipulating rn
   RoboCompGetAprilTags::marca currentMarca; //Marca that we are going to
   QVec target; //Actual target coordinates
