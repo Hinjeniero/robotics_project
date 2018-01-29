@@ -38,27 +38,27 @@ public:
 	SpecificWorker(MapPrx& mprx);
 	~SpecificWorker();
 	bool setParams(RoboCompCommonBehavior::ParameterList params);
-	
+	/*States of the state machine of this component*/
 	void searchState();
 	void waitState();
 	void idleState();
-	void handlerState();
+	void handlerPickState();
+	void handlerReleaseState();
 	/*State machine enum*/
-	enum State {SEARCH, WAIT, IDLE, HANDLER};
-      /*Present state of the robot*/
+	enum State {SEARCH, WAIT, IDLE, HANDLERPICK, HANDLERRELEASE};
+	/*Present state of the robot*/
 	State robotState = State::SEARCH;
-	RoboCompGetAprilTags::listaMarcas lstMarcas;
+	/*Gets all the marcas from getapriltags*/
 	void getMarcas();
+	/*Prints all transformations possibles between coordinates (points of view)*/
 	void printAllTransformations(const ::RoboCompGetAprilTags::marca t);
-	void newAprilTag(RoboCompGetAprilTags::listaMarcas& tags);
-	
-	
 	
 public slots:
 	void compute();
     
 private:
   
+  /*Thread safe Tag structure*/
   struct Tag{
     Tag(){};
     
@@ -89,7 +89,7 @@ private:
     }    
   };
   
-  //Para saber que cajas hemos movido
+  /*Thread-safe list that contains mark-related boxes.*/
   struct BoxesList{
     std::vector<RoboCompGetAprilTags::marca> movedBoxes;
     QMutex mut;
@@ -120,16 +120,17 @@ private:
     }
   };
   
-  int initialBox = 11;
-  int currentBox = initialBox;
+  int initialBox = 11; //Initial box to search
+  int currentBox = initialBox; //Current box that we are searching for
   int dropPlace = 0; //0, 1, 2, 3, depends in which corner do we want to be the dumpster;
-  InnerModel *innermodel;	
-  Tag currentTag;
-  RoboCompGetAprilTags::marca currentMarca;
-  QVec target;
-  float boxDistance;
-  bool targetActive = false;
-  BoxesList boxesHistory;
+  bool holdingBox = false; //Says if the robot is holding the box
+  InnerModel *innermodel; //Map 
+  Tag currentTag; //Tag that we are manipulating rn
+  RoboCompGetAprilTags::marca currentMarca; //Marca that we are going to
+  QVec target; //Actual target coordinates
+  float boxDistance; //Initial box distance, when we just found the box
+  bool targetActive = false; //Target active means going to a location if true
+  BoxesList boxesHistory; //History of boxes that have been moved already
   Tag tag;
 
 };
