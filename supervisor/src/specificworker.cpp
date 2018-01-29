@@ -36,7 +36,7 @@ SpecificWorker::~SpecificWorker()
 
 bool SpecificWorker::setParams(RoboCompCommonBehavior::ParameterList params)
 {
-    innermodel = new InnerModel("/home/hinjeniero/robocomp/files/innermodel/betaWorldArm.xml");
+    innermodel = new InnerModel("/home/salabeta/robocomp/files/innermodel/betaWorldArm.xml");
     timer.start(Period);
     return true;
 }
@@ -48,9 +48,12 @@ void SpecificWorker::compute()
     differentialrobot_proxy->getBaseState(state);
   }catch(const Ice::Exception &ex) {
     std::cout << "Exception differentialrobot_proxy in supervisor - "<< ex <<endl; 
+  
   }
-  //Updating the robot coordinates in each compute turn
+ //Updating the robot coordinates in each compute turn
   innermodel->updateTransformValues("base", state.x, 0, state.z, 0, state.alpha, 0); 
+  getMarcas();
+  
   try
   {
       switch(robotState) {
@@ -101,25 +104,27 @@ void SpecificWorker::compute()
 
 /*State to search for boxes turning indefinitely*/
 void SpecificWorker::searchState(){
-    gotopoint_proxy->turn(1); //Turning until it finds a box
+    gotopoint_proxy->turn(0.5); //Turning until it finds a box
     std::cout << "SEARCH - Buscando la id " << currentBox <<endl;
-    getMarcas();
     if(targetActive){ //Found the desired box in getMarcas 
-      std::cout << "SEARCH - De camino a target X = "<< target.x() << " Z = " << target.z() <<endl;
-      gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
+      //std::cout << "SEARCH - De camino a target X = "<< target.x() << " Z = " << target.z() <<endl;      
+      //gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
       robotState = State::WAIT;
     }
 }
 
 /*State waiting for the subcomponent to move the robot until the target location*/
 void SpecificWorker::waitState(){
-  std::cout << "WAIT state" << endl;
+  //std::cout << "WAIT state" << endl;
+  gotopoint_proxy->go("", target.x(), target.z(), 0); //Going to the desired box location  
+  
   if (gotopoint_proxy->atTarget()){ //IF the robot arrived at the target (box)
-    boxesHistory.addBox(currentMarca); //Adds the box to the history of moved boxes
+    std::cout << "Print attarget in WAIT()" << endl;
+    //boxesHistory.addBox(currentMarca); //Adds the box to the history of moved boxes
     if(!holdingBox){ //If is at the box (not holding it yet)
       robotState = State::HANDLERPICK;
       return;
-    }
+    }      
     //After reaching the corner, has to drop the box
     robotState = State::HANDLERRELEASE;
   }
@@ -128,13 +133,11 @@ void SpecificWorker::waitState(){
 /*State waiting for the subcomponent to move the robot to the starting location*/
 void SpecificWorker::idleState(){
   std::cout << "IDLE state" << endl;
-  if (gotopoint_proxy->atTarget()){ //If at target
-    std::cout << "Idle state, reached target, back at the beginning" << endl;
-    gotopoint_proxy->stop(); //Stops the robot
-    targetActive = false; //Dont have a target anymore to go to
-    currentBox++; //Incrementing index, so the box we look for is the next one
-    robotState = State::SEARCH; 
-  }
+  std::cout << "Idle state, reached target, back at the beginning" << endl;
+  gotopoint_proxy->stop(); //Stops the robot  
+  targetActive = false; //Dont have a target anymore to go to
+  currentBox++; //Incrementing index, so the box we look for is the next one
+  robotState = State::SEARCH; 
 }
 
 /*State manipulating the box with the arm*/
@@ -142,9 +145,13 @@ void SpecificWorker::handlerPickState() {
   cout << "PICKING BOX"<< endl;
   holdingBox = true;
   switch(dropPlace){//Decides which corner will be the dropping place
-      case 0:
-	gotopoint_proxy->go("",2000,2000,0); //upper left corner
+      case 0:{
+	//QVec t = (2000, 0, 2000);
+	std::cout << "case 0" << endl;
+	target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //Setting the target
+	//target.x;
 	break;
+      }
       case 1:
 	gotopoint_proxy->go("",-2000,2000,0); //low left corner
 	break;
@@ -166,8 +173,7 @@ void SpecificWorker::handlerReleaseState()
   cout << "RELEASING BOX"<< endl;
   //After moving the box to the corner
   holdingBox = false;
-  gotopoint_proxy->go("",0,0,0); //Center of the room
-  robotState = State::WAIT;
+  robotState = State::IDLE;
 }
 
 
@@ -180,15 +186,24 @@ void SpecificWorker::getMarcas () {
   }
   
   for(auto l:lstMarcas) { //For each mark on the list
-    std::cout << "marca.id ->" << l.id << endl;
+    //std::cout << "marca.id ->" << l.id << endl;
     //If its the mark of the box that we are looking for, and we didnt move that box before
     if (l.id == currentBox && !boxesHistory.containsBox(l)){
       std::cout << "Found current box, id = " << l.id << ", lx = " << l.tx << ", lz = " << l.tz << endl;
-      printAllTransformations(l);
       currentMarca = l;
-      target = innermodel->transform("world", QVec::vec3(currentMarca.tx, 0, currentMarca.tz), "base"); //Setting the target
-      std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << endl;
+      if(!holdingBox)
+	target = innermodel->transform("world", QVec::vec3(currentMarca.tx, 0, currentMarca.tz), "base"); //Setting the target
+      else
+	target = innermodel->transform("world", QVec::vec3(2000, 0, 2000), "base"); //TODO CORNER
+      QVec r = innermodel->transform("world", "base");
+      //target.print("target");
+      //r.print("r");
+       std::cout << "-------------------------------------" << endl;
+      
+      
+//	std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << endl;
       boxDistance = target.norm2(); //Initial box distance
+      //std::cout << "After transforming the found box, target.x() = " << target.x() << ", target.z() = " << target.z() << " distance = " << boxDistance << endl;
       targetActive = true; //have a target to go to
       break;
     }   

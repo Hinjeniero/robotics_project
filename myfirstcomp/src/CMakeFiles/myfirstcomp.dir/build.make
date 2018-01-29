@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hinjeniero/robotics_project/myfirstcomp
+CMAKE_SOURCE_DIR = /home/salabeta/robotics_project/myfirstcomp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hinjeniero/robotics_project/myfirstcomp
+CMAKE_BINARY_DIR = /home/salabeta/robotics_project/myfirstcomp
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/myfirstcomp.dir/depend.make
@@ -58,70 +58,70 @@ include src/CMakeFiles/myfirstcomp.dir/progress.make
 include src/CMakeFiles/myfirstcomp.dir/flags.make
 
 src/CommonBehavior.cpp: /opt/robocomp/interfaces/CommonBehavior.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating CommonBehavior.cpp and CommonBehavior.h from CommonBehavior.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/CommonBehavior.ice --output-dir .
 
 src/CommonBehavior.h: src/CommonBehavior.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/CommonBehavior.h
 
 src/DifferentialRobot.cpp: /opt/robocomp/interfaces/DifferentialRobot.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating DifferentialRobot.cpp and DifferentialRobot.h from DifferentialRobot.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/DifferentialRobot.ice --output-dir .
 
 src/DifferentialRobot.h: src/DifferentialRobot.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/DifferentialRobot.h
 
 src/Laser.cpp: /opt/robocomp/interfaces/Laser.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Laser.cpp and Laser.h from Laser.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Laser.cpp and Laser.h from Laser.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/Laser.ice --output-dir .
 
 src/Laser.h: src/Laser.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/Laser.h
 
 src/RCISMousePicker.cpp: /opt/robocomp/interfaces/RCISMousePicker.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RCISMousePicker.cpp and RCISMousePicker.h from RCISMousePicker.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RCISMousePicker.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating RCISMousePicker.cpp and RCISMousePicker.h from RCISMousePicker.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/RCISMousePicker.ice --output-dir .
 
 src/RCISMousePicker.h: src/RCISMousePicker.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/RCISMousePicker.h
 
 src/GotoPoint.cpp: /opt/robocomp/interfaces/GotoPoint.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating GotoPoint.cpp and GotoPoint.h from GotoPoint.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GotoPoint.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating GotoPoint.cpp and GotoPoint.h from GotoPoint.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GotoPoint.ice --output-dir .
 
 src/GotoPoint.h: src/GotoPoint.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GotoPoint.h
 
 src/JointMotor.cpp: /opt/robocomp/interfaces/JointMotor.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating JointMotor.cpp and JointMotor.h from JointMotor.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/JointMotor.ice --output-dir .
 
 src/JointMotor.h: src/JointMotor.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/JointMotor.h
 
 src/GetAprilTags.cpp: /opt/robocomp/interfaces/GetAprilTags.ice
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && slice2cpp -I/home/hinjeniero/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating GetAprilTags.cpp and GetAprilTags.h from GetAprilTags.ice"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && slice2cpp -I/home/salabeta/robocomp//interfaces/ -I/opt/robocomp/interfaces -I. /opt/robocomp/interfaces/GetAprilTags.ice --output-dir .
 
 src/GetAprilTags.h: src/GetAprilTags.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate src/GetAprilTags.h
 
 src/ui_mainUI.h: src/mainUI.ui
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating ui_mainUI.h"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/hinjeniero/robotics_project/myfirstcomp/src/ui_mainUI.h /home/hinjeniero/robotics_project/myfirstcomp/src/mainUI.ui
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating ui_mainUI.h"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/lib/x86_64-linux-gnu/qt4/bin/uic -o /home/salabeta/robotics_project/myfirstcomp/src/ui_mainUI.h /home/salabeta/robotics_project/myfirstcomp/src/mainUI.ui
 
 src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o: src/specificworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/specificworker.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/specificworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/specificworker.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/specificworker.cpp
 
 src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/specificworker.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/specificworker.cpp > CMakeFiles/myfirstcomp.dir/specificworker.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/specificworker.cpp > CMakeFiles/myfirstcomp.dir/specificworker.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/specificworker.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/specificworker.cpp -o CMakeFiles/myfirstcomp.dir/specificworker.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/specificworker.cpp -o CMakeFiles/myfirstcomp.dir/specificworker.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o.requires:
 
@@ -136,16 +136,16 @@ src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o: src/specificmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/specificmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/specificmonitor.cpp
 
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/specificmonitor.cpp > CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/specificmonitor.cpp > CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/specificmonitor.cpp -o CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/specificmonitor.cpp -o CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o.requires:
 
@@ -158,66 +158,66 @@ src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o.provides: src/CMakeFiles/my
 src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o.provides.build: src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o
 
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o: /home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o -c /home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o: /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o -c /home/salabeta/robocomp/classes/rapplication/rapplication.cpp
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.i
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/rapplication/rapplication.cpp > CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.i
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.s
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/rapplication/rapplication.cpp -o CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.s
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.requires:
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.requires
+.PHONY : src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
-.PHONY : src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.provides
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build
+.PHONY : src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.provides.build: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
 
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o: /home/hinjeniero/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o -c /home/hinjeniero/robocomp/classes/qlog/qlog.cpp
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o: /home/salabeta/robocomp/classes/qlog/qlog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o -c /home/salabeta/robocomp/classes/qlog/qlog.cpp
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robocomp/classes/qlog/qlog.cpp > CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.i
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robocomp/classes/qlog/qlog.cpp > CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.i
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.s
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robocomp/classes/qlog/qlog.cpp -o CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.s
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.requires:
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.requires
+.PHONY : src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.provides.build
-.PHONY : src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.provides
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/myfirstcomp.dir/build.make src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build
+.PHONY : src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides
 
-src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o
+src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.provides.build: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
 
 
 src/CMakeFiles/myfirstcomp.dir/main.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/myfirstcomp.dir/main.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/main.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/myfirstcomp.dir/main.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/main.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/main.cpp
 
 src/CMakeFiles/myfirstcomp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/main.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/main.cpp > CMakeFiles/myfirstcomp.dir/main.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/main.cpp > CMakeFiles/myfirstcomp.dir/main.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/main.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/main.cpp -o CMakeFiles/myfirstcomp.dir/main.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/main.cpp -o CMakeFiles/myfirstcomp.dir/main.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/main.cpp.o.requires:
 
@@ -232,16 +232,16 @@ src/CMakeFiles/myfirstcomp.dir/main.cpp.o.provides.build: src/CMakeFiles/myfirst
 
 src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/genericmonitor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/genericmonitor.cpp
 
 src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/genericmonitor.cpp > CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/genericmonitor.cpp > CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/genericmonitor.cpp -o CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/genericmonitor.cpp -o CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o.requires:
 
@@ -256,16 +256,16 @@ src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/commonbehaviorI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/commonbehaviorI.cpp
 
 src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/commonbehaviorI.cpp > CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/commonbehaviorI.cpp > CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/commonbehaviorI.cpp -o CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/commonbehaviorI.cpp -o CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o.requires:
 
@@ -280,16 +280,16 @@ src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o: src/genericworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/genericworker.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/genericworker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/genericworker.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/genericworker.cpp
 
 src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/genericworker.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/genericworker.cpp > CMakeFiles/myfirstcomp.dir/genericworker.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/genericworker.cpp > CMakeFiles/myfirstcomp.dir/genericworker.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/genericworker.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/genericworker.cpp -o CMakeFiles/myfirstcomp.dir/genericworker.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/genericworker.cpp -o CMakeFiles/myfirstcomp.dir/genericworker.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o.requires:
 
@@ -304,16 +304,16 @@ src/CMakeFiles/myfirstcomp.dir/genericworker.cpp.o.provides.build: src/CMakeFile
 
 src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o: src/gotopointI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/gotopointI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/gotopointI.cpp
 
 src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/gotopointI.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/gotopointI.cpp > CMakeFiles/myfirstcomp.dir/gotopointI.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/gotopointI.cpp > CMakeFiles/myfirstcomp.dir/gotopointI.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/gotopointI.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/gotopointI.cpp -o CMakeFiles/myfirstcomp.dir/gotopointI.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/gotopointI.cpp -o CMakeFiles/myfirstcomp.dir/gotopointI.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o.requires:
 
@@ -328,16 +328,16 @@ src/CMakeFiles/myfirstcomp.dir/gotopointI.cpp.o.provides.build: src/CMakeFiles/m
 
 src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o: src/rcismousepickerI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/rcismousepickerI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/rcismousepickerI.cpp
 
 src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/rcismousepickerI.cpp > CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/rcismousepickerI.cpp > CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/rcismousepickerI.cpp -o CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/rcismousepickerI.cpp -o CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o.requires:
 
@@ -352,16 +352,16 @@ src/CMakeFiles/myfirstcomp.dir/rcismousepickerI.cpp.o.provides.build: src/CMakeF
 
 src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/CommonBehavior.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/CommonBehavior.cpp
 
 src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/CommonBehavior.cpp > CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/CommonBehavior.cpp > CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/CommonBehavior.cpp -o CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/CommonBehavior.cpp -o CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o.requires:
 
@@ -376,16 +376,16 @@ src/CMakeFiles/myfirstcomp.dir/CommonBehavior.cpp.o.provides.build: src/CMakeFil
 
 src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/DifferentialRobot.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/DifferentialRobot.cpp
 
 src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/DifferentialRobot.cpp > CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/DifferentialRobot.cpp > CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/DifferentialRobot.cpp -o CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/DifferentialRobot.cpp -o CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o.requires:
 
@@ -400,16 +400,16 @@ src/CMakeFiles/myfirstcomp.dir/DifferentialRobot.cpp.o.provides.build: src/CMake
 
 src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o: src/Laser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/Laser.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/Laser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/Laser.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/Laser.cpp
 
 src/CMakeFiles/myfirstcomp.dir/Laser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/Laser.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/Laser.cpp > CMakeFiles/myfirstcomp.dir/Laser.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/Laser.cpp > CMakeFiles/myfirstcomp.dir/Laser.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/Laser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/Laser.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/Laser.cpp -o CMakeFiles/myfirstcomp.dir/Laser.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/Laser.cpp -o CMakeFiles/myfirstcomp.dir/Laser.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o.requires:
 
@@ -424,16 +424,16 @@ src/CMakeFiles/myfirstcomp.dir/Laser.cpp.o.provides.build: src/CMakeFiles/myfirs
 
 src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o: src/RCISMousePicker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/RCISMousePicker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/RCISMousePicker.cpp
 
 src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/RCISMousePicker.cpp > CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/RCISMousePicker.cpp > CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/RCISMousePicker.cpp -o CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/RCISMousePicker.cpp -o CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o.requires:
 
@@ -448,16 +448,16 @@ src/CMakeFiles/myfirstcomp.dir/RCISMousePicker.cpp.o.provides.build: src/CMakeFi
 
 src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o: src/GotoPoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/GotoPoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/GotoPoint.cpp
 
 src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/GotoPoint.cpp > CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/GotoPoint.cpp > CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/GotoPoint.cpp -o CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/GotoPoint.cpp -o CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o.requires:
 
@@ -472,16 +472,16 @@ src/CMakeFiles/myfirstcomp.dir/GotoPoint.cpp.o.provides.build: src/CMakeFiles/my
 
 src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o: src/JointMotor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/JointMotor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/JointMotor.cpp
 
 src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/JointMotor.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/JointMotor.cpp > CMakeFiles/myfirstcomp.dir/JointMotor.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/JointMotor.cpp > CMakeFiles/myfirstcomp.dir/JointMotor.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/JointMotor.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/JointMotor.cpp -o CMakeFiles/myfirstcomp.dir/JointMotor.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/JointMotor.cpp -o CMakeFiles/myfirstcomp.dir/JointMotor.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o.requires:
 
@@ -496,16 +496,16 @@ src/CMakeFiles/myfirstcomp.dir/JointMotor.cpp.o.provides.build: src/CMakeFiles/m
 
 src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o: src/GetAprilTags.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/GetAprilTags.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/GetAprilTags.cpp
 
 src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/GetAprilTags.cpp > CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/GetAprilTags.cpp > CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/GetAprilTags.cpp -o CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/GetAprilTags.cpp -o CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o.requires:
 
@@ -520,16 +520,16 @@ src/CMakeFiles/myfirstcomp.dir/GetAprilTags.cpp.o.provides.build: src/CMakeFiles
 
 src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o: src/CMakeFiles/myfirstcomp.dir/flags.make
 src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o: src/myfirstcomp_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o -c /home/hinjeniero/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o -c /home/salabeta/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp
 
 src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.i"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hinjeniero/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp > CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.i
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/salabeta/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp > CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.i
 
 src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.s"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hinjeniero/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp -o CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.s
+	cd /home/salabeta/robotics_project/myfirstcomp/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/salabeta/robotics_project/myfirstcomp/src/myfirstcomp_automoc.cpp -o CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.s
 
 src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o.requires:
 
@@ -546,8 +546,8 @@ src/CMakeFiles/myfirstcomp.dir/myfirstcomp_automoc.cpp.o.provides.build: src/CMa
 myfirstcomp_OBJECTS = \
 "CMakeFiles/myfirstcomp.dir/specificworker.cpp.o" \
 "CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o" \
-"CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o" \
-"CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o" \
+"CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o" \
+"CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o" \
 "CMakeFiles/myfirstcomp.dir/main.cpp.o" \
 "CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o" \
 "CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o" \
@@ -568,8 +568,8 @@ myfirstcomp_EXTERNAL_OBJECTS =
 
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o
-bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o
-bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o
+bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o
+bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/main.cpp.o
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o
@@ -594,8 +594,8 @@ bin/myfirstcomp: /usr/lib/x86_64-linux-gnu/libQtGui.so
 bin/myfirstcomp: /usr/lib/x86_64-linux-gnu/libQtXml.so
 bin/myfirstcomp: /usr/lib/x86_64-linux-gnu/libQtCore.so
 bin/myfirstcomp: src/CMakeFiles/myfirstcomp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hinjeniero/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable ../bin/myfirstcomp"
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myfirstcomp.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/salabeta/robotics_project/myfirstcomp/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable ../bin/myfirstcomp"
+	cd /home/salabeta/robotics_project/myfirstcomp/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myfirstcomp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/myfirstcomp.dir/build: bin/myfirstcomp
@@ -604,8 +604,8 @@ src/CMakeFiles/myfirstcomp.dir/build: bin/myfirstcomp
 
 src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/specificworker.cpp.o.requires
 src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/specificmonitor.cpp.o.requires
-src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o.requires
-src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o.requires
+src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o.requires
+src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o.requires
 src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/main.cpp.o.requires
 src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/genericmonitor.cpp.o.requires
 src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/commonbehaviorI.cpp.o.requires
@@ -624,7 +624,7 @@ src/CMakeFiles/myfirstcomp.dir/requires: src/CMakeFiles/myfirstcomp.dir/myfirstc
 .PHONY : src/CMakeFiles/myfirstcomp.dir/requires
 
 src/CMakeFiles/myfirstcomp.dir/clean:
-	cd /home/hinjeniero/robotics_project/myfirstcomp/src && $(CMAKE_COMMAND) -P CMakeFiles/myfirstcomp.dir/cmake_clean.cmake
+	cd /home/salabeta/robotics_project/myfirstcomp/src && $(CMAKE_COMMAND) -P CMakeFiles/myfirstcomp.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/myfirstcomp.dir/clean
 
 src/CMakeFiles/myfirstcomp.dir/depend: src/CommonBehavior.cpp
@@ -642,6 +642,6 @@ src/CMakeFiles/myfirstcomp.dir/depend: src/JointMotor.h
 src/CMakeFiles/myfirstcomp.dir/depend: src/GetAprilTags.cpp
 src/CMakeFiles/myfirstcomp.dir/depend: src/GetAprilTags.h
 src/CMakeFiles/myfirstcomp.dir/depend: src/ui_mainUI.h
-	cd /home/hinjeniero/robotics_project/myfirstcomp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hinjeniero/robotics_project/myfirstcomp /home/hinjeniero/robotics_project/myfirstcomp/src /home/hinjeniero/robotics_project/myfirstcomp /home/hinjeniero/robotics_project/myfirstcomp/src /home/hinjeniero/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/salabeta/robotics_project/myfirstcomp && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/salabeta/robotics_project/myfirstcomp /home/salabeta/robotics_project/myfirstcomp/src /home/salabeta/robotics_project/myfirstcomp /home/salabeta/robotics_project/myfirstcomp/src /home/salabeta/robotics_project/myfirstcomp/src/CMakeFiles/myfirstcomp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/myfirstcomp.dir/depend
 

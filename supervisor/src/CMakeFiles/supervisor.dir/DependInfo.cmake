@@ -4,19 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hinjeniero/robotics_project/supervisor/src/CommonBehavior.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/CommonBehavior.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/DifferentialRobot.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/DifferentialRobot.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/GetAprilTags.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/GetAprilTags.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/GotoPoint.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/GotoPoint.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/commonbehaviorI.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/commonbehaviorI.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/genericmonitor.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericmonitor.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/genericworker.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericworker.cpp.o"
-  "/home/hinjeniero/robocomp/classes/qlog/qlog.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/hinjeniero/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/hinjeniero/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/main.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/main.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/specificmonitor.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificmonitor.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/specificworker.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificworker.cpp.o"
-  "/home/hinjeniero/robotics_project/supervisor/src/supervisor_automoc.cpp" "/home/hinjeniero/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/supervisor_automoc.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/CommonBehavior.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/DifferentialRobot.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/GetAprilTags.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/GetAprilTags.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/GotoPoint.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/GotoPoint.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/commonbehaviorI.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/commonbehaviorI.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/genericmonitor.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericmonitor.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/genericworker.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/genericworker.cpp.o"
+  "/home/salabeta/robocomp/classes/qlog/qlog.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/salabeta/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/salabeta/robocomp/classes/rapplication/rapplication.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/home/salabeta/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/main.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/main.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/specificmonitor.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificmonitor.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/specificworker.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/specificworker.cpp.o"
+  "/home/salabeta/robotics_project/supervisor/src/supervisor_automoc.cpp" "/home/salabeta/robotics_project/supervisor/src/CMakeFiles/supervisor.dir/supervisor_automoc.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -42,18 +42,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/home/hinjeniero/robocomp/classes"
-  "/home/hinjeniero/robocomp/libs"
-  "/home/hinjeniero/robocomp/interfaces"
+  "/home/salabeta/robocomp/classes"
+  "/home/salabeta/robocomp/libs"
+  "/home/salabeta/robocomp/interfaces"
   "/include"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/hinjeniero/robotics_project/supervisor/src/CommonBehavior.h" "/home/hinjeniero/robotics_project/supervisor/src/CommonBehavior.cpp"
-  "/home/hinjeniero/robotics_project/supervisor/src/DifferentialRobot.h" "/home/hinjeniero/robotics_project/supervisor/src/DifferentialRobot.cpp"
-  "/home/hinjeniero/robotics_project/supervisor/src/GetAprilTags.h" "/home/hinjeniero/robotics_project/supervisor/src/GetAprilTags.cpp"
-  "/home/hinjeniero/robotics_project/supervisor/src/GotoPoint.h" "/home/hinjeniero/robotics_project/supervisor/src/GotoPoint.cpp"
+  "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.h" "/home/salabeta/robotics_project/supervisor/src/CommonBehavior.cpp"
+  "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.h" "/home/salabeta/robotics_project/supervisor/src/DifferentialRobot.cpp"
+  "/home/salabeta/robotics_project/supervisor/src/GetAprilTags.h" "/home/salabeta/robotics_project/supervisor/src/GetAprilTags.cpp"
+  "/home/salabeta/robotics_project/supervisor/src/GotoPoint.h" "/home/salabeta/robotics_project/supervisor/src/GotoPoint.cpp"
   )
 
 
